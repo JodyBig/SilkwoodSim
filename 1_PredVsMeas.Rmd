@@ -7,7 +7,7 @@ output:
     code_folding: hide
     fig_caption: yes
     number_sections: yes
-    theme: cosmo
+    theme: united
     toc: yes
     toc_depth: 3
     toc_float: yes
@@ -30,7 +30,7 @@ library(broom)
 ## Site
 
 - Silkwood, South Johnstone sub-basin
-- (17o44'44.72"S; 146o2'58.76"E)
+- (17^o^44'44.72"S; 146^o^2'58.76"E)
 - Bingal Bay BOM station #032009
 
 ## Treatments
@@ -42,79 +42,67 @@ library(broom)
 treatDesc <-
   read.csv('./Measurements/TreatmentDescription.csv', stringsAsFactors = FALSE) %>%
   mutate(ratoon_no = as.character(ratoon_no))
-treatDesc
+kable(treatDesc)
 ```
-
-Five treatments:
-	- Plant crop (2014-2015):
-		+ T1 = 194 kgN/ha
-		+ T2 = 134
-		+ T3 = 94
-		+ T4 = 94 (33Urea/66CRF)
-		+ T5 = 67
-	- Ratoon crop (2015-2016):
-		+ T1 = 190 kgN/ha
-		+ T2 = 158
-		+ T3 = 110
-		+ T4 = 112 (53Urea/47CRF)
-		+ T5 = 0
 
 ## Measurements
 
 - Above-ground biomass was measured but the values are not in the report
 - Water quality data collected from T1-T4 only
 
-### N loss:
-	- Total off-site N loss ranged from 19-112 kgN/ha
-	- Plant crop NinRO = 6-11 kgN/ha
-	- Ratoon crop NinRO = 8-12 kgN/ha
-	- Plant crop runoff 8% of rainfall
-	- Ratoon crop runoff 48% of rainfall
-	- Plant crop drainage 31% of rainfall
-	- Ratoon crop drainage 22% of rainfall
-	- Unaccounted for N was considered to be primarily gas loss (via denit and volat)
+### N loss
+
+- Total off-site N loss ranged from 19-112 kgN/ha
+- Plant crop NinRO = 6-11 kgN/ha
+- Ratoon crop NinRO = 8-12 kgN/ha
+- Plant crop runoff 8% of rainfall
+- Ratoon crop runoff 48% of rainfall
+- Plant crop drainage 31% of rainfall
+- Ratoon crop drainage 22% of rainfall
+- Unaccounted for N was considered to be primarily gas loss (via denit and volat)
 
 
 ## Crop management
 
-Crop:
-	- Q183 variety
-	- 2014-05-28: Preliminary nutrients soil sampling
-	- 2014-07-21: Nutrients soil sampling (prior to planting)
-	- 2014-07-21: planted 2014-07-21
-	- 2014-07-21: at planting DAP 22.5 kgN/ha + 7 kgN/ha in liquid form
-	- 2014-10-22: N fertiliser top-dressed and lightly cultivated (3month later; check date is not 2014-10-02)
-	- 2015-11-11: harvest (gctb); soil sampling to 90cm	
-	- 2015-11-25: N fertiliser applied via stool-split
-	- 2016-??-??: ratoon crop harvest
-	- 2016-11-28: soil sampling to 90cm (after harvest)
+- Q183 variety
+- 2014-05-28: Preliminary nutrients soil sampling
+- 2014-07-21: Nutrients soil sampling (prior to planting)
+- 2014-07-21: planted 2014-07-21
+- 2014-07-21: at planting DAP 22.5 kgN/ha + 7 kgN/ha in liquid form
+- 2014-10-22: N fertiliser top-dressed and lightly cultivated (3month later; check date is not 2014-10-02)
+- 2015-11-11: harvest (gctb); soil sampling to 90cm	
+- 2015-11-25: N fertiliser applied via stool-split
+- 2016-??-??: ratoon crop harvest
+- 2016-11-28: soil sampling to 90cm (after harvest)
 	
-	- T1 plant crop impacted by lodging and subsequent suckering (image taken 2015-03-08)
-	- Two metre spaced beds with dual cane rows 70cm apart
-  - Cultivation and weed mgt same across treatments
+- T1 plant crop impacted by lodging and subsequent suckering (image taken 2015-03-08)
+- Two metre spaced beds with dual cane rows 70cm apart
+- Cultivation and weed mgt same across treatments
 	
 ## Paddock history:
 
-	- previous sugarcane yields at the paddock were 35-72 t/ha
-	- laser-leveled in 2013 (following harvest)
-	- sprayed out bare fallow for 2013-2014 season
-	- further cultivation after wet season
-	
+- previous sugarcane yields at the paddock were 35-72 t/ha
+- laser-leveled in 2013 (following harvest)
+- sprayed out bare fallow for 2013-2014 season
+- further cultivation after wet season
+
 ## Soil:
-	- Hydrosol / Bulgun soil
-	- Hydrosol is a soil that experiences saturation of the greater part of the profile for prolonged periods in most years.
-	- low permeability
-	- low elevation
-	- high propotion of runoff
-	- saturated for long periods of time
-	- water table remaining within 60cm for days to weeks after substantial rainfall
+
+- Hydrosol / Bulgun soil
+- Hydrosol is a soil that experiences saturation of the greater part of the profile for prolonged periods in most years.
+- low permeability
+- low elevation
+- high propotion of runoff
+- saturated for long periods of time
+- water table remaining within 60cm for days to weeks after substantial rainfall
 	
 ## Climate:
-	- Rainfall:
-		+ Below average rainfall for 2014-2016
-		+ Plant crop: 1718 mm (average 3075mm)
-		+ Ratoon crop: 2498 mm
-		
+
+- Rainfall:
+    + Below average rainfall for 2014-2016
+    + Plant crop = 1718 mm (average 3075mm)
+    + Ratoon crop = 2498 mm
+    
 
 ```{r}
 ## Read in apsim output files ----
@@ -135,6 +123,11 @@ sim <-
   sim %>%
   tbl_df() %>%
   mutate(treatValue = str_sub(treatCode, 2,2)) %>%
+  mutate(cropClass = case_when(
+    ratoon_no == 0 ~ 'Plant',
+    ratoon_no == 1 ~ 'Ratoon1'
+  )) %>%
+  # mutate(cropClass = factor(cropClass, levels=c('Plant', '1st Ratoon'))) %>%
   mutate(yield_t_ha = cane_wt/100/0.3) %>% # convert from g/m2 dry cane to t/ha wet cane with an assumed dmf of 0.3
   mutate(biomass_t_ha = biomass/100) %>% # convert from g/m2 to t/ha
   mutate(biomassN_kg_ha = biomass_n*10) %>% # convert from g/m2 to kg/ha
@@ -146,13 +139,13 @@ sim <-
 ```{r}
 #### Plot average stress indices ----
 sim %>%
-  select(treatCode, treatValue, ratoon_no, avgNstress, avgWaterstress, avgOXDEFstress) %>%
+  select(treatCode, treatValue, ratoon_no, cropClass, avgNstress, avgWaterstress, avgOXDEFstress) %>%
   gather(variable, value, avgNstress, avgWaterstress, avgOXDEFstress) %>%
   ggplot(aes(as.numeric(treatValue), value, colour=variable))+
   geom_line(size=1)+
   geom_point()+
   scale_colour_gdocs()+
-  facet_wrap(~ratoon_no)+
+  facet_wrap(~cropClass)+
   theme_few()+
   theme(legend.title = element_blank())
 ```
@@ -167,7 +160,7 @@ tmp <-
   sim %>%
   mutate(nit_totDiff = c(NA,diff(nit_tot..))) %>%
   # mutate(nit_totDiff = ifelse(ratoon_no == 0, NA, nit_totDiff)) %>%
-  select(treatCode, treatValue, ratoon_no, sumDenit, sumNinDD, sumNinRO, biomassN_kg_ha, nit_totDiff) %>%
+  select(treatCode, treatValue, ratoon_no, cropClass, sumDenit, sumNinDD, sumNinRO, biomassN_kg_ha, nit_totDiff) %>%
   gather(variable, value, sumDenit, sumNinDD, sumNinRO, biomassN_kg_ha, nit_totDiff) %>%
   # mutate(variable = factor(variable, levels = c('sumDenit', 'sumNinDD', 'sumNinRO', 'biomassN_kg_ha', 'nit_totDiff'), labels = c('N denitrified', 'N in deep drainage', 'N in runoff', 'N in above ground biomass', 'Change in soil N'))) %>%
   mutate(treatValue = as.numeric(treatValue))
@@ -180,7 +173,7 @@ ggplot()+
   geom_col(data=tmp2, aes(treatValue, value, fill=variable))+
   geom_hline(yintercept=0)+
   scale_fill_colorblind()+
-  facet_wrap(~ratoon_no)+
+  facet_wrap(~cropClass)+
   theme_few()
 ```
 
@@ -189,12 +182,12 @@ ggplot()+
 ```{r}
 #### Plot a partial water balance ----
 sim %>%
-  select(treatCode, treatValue, ratoon_no, sumDrain, sumRunoff, sumRain, sumES, sumEP) %>%
+  select(treatCode, treatValue, ratoon_no, cropClass, sumDrain, sumRunoff, sumRain, sumES, sumEP) %>%
   gather(variable, value, sumDrain, sumRunoff, sumRain, sumES, sumEP) %>%
   ggplot(aes(as.numeric(treatValue), value, colour=variable))+
   geom_line()+
   geom_point()+
-  facet_wrap(~ratoon_no, ncol=4)+
+  facet_wrap(~cropClass)+
   scale_colour_gdocs()+
   xlab('Fertiliser N Treatment (kgN/ha)')+
   ylab('(mm)')+
@@ -215,17 +208,21 @@ obs <-
 
 sim1 <-
   sim %>%
-  select(treatCode, treatValue, ratoon_no, yield_t_ha, biomass_t_ha) %>%
+  select(treatCode, treatValue, ratoon_no, cropClass, yield_t_ha, biomass_t_ha) %>%
   mutate(ratoon_no = as.character(ratoon_no)) %>%
+  mutate(cropClass = as.character(cropClass)) %>%
   mutate(dataSource = 'simulated') %>%
   gather(variable, value, yield_t_ha, biomass_t_ha)
 
 obs1 <-
   obs %>%
   filter(variable %in% c("TCH_t_ha","DM_t_ha")) %>%
-  mutate(variable = factor(variable, levels=c("TCH_t_ha", "DM_t_ha"), labels = c('yield_t_ha', 'biomass_t_ha'))) %>%
+  mutate(variable = case_when(
+    variable == "TCH_t_ha" ~ 'yield_t_ha',
+    variable == "DM_t_ha" ~ 'biomass_t_ha'
+    )) %>%
   mutate(dataSource = 'measured') %>%
-  select(treatCode, treatValue, ratoon_no, dataSource, variable, value)
+  select(treatCode, treatValue, ratoon_no, cropClass, dataSource, variable, value)
 
 d <-
   obs1 %>%
@@ -240,9 +237,10 @@ d <-
 #### Compare mean yield and biomass using actual yields ----
 d %>%
   mutate(variable = factor(variable, levels=c('yield_t_ha', 'biomass_t_ha'), labels = c('Cane yield (t/ha)', 'Dry plant biomass(t/ha)'))) %>%
+  na.omit() %>%
   ggplot(aes(as.numeric(treatValue), value, colour=dataSource))+
   geom_point()+
-  facet_grid(variable~ratoon_no, scale='free_y', switch='y')+
+  facet_grid(variable~cropClass, scale='free_y', switch='y')+
   xlab('Fertiliser N Treatment (kgN/ha)')+
   scale_colour_colorblind()+
   theme_few()+
@@ -269,35 +267,18 @@ n240Values <-
 
 d1 <-
   d1 %>%
-  left_join(n240Values) %>%
+  left_join(n240Values, by = c("dataSource", "ratoon_no", "variable")) %>%
   mutate(percOfMaxN = meanYld/AtMaxN * 100)
 
 ```
 
-```{r, results='asis'}
-d1tmp <-
-  d1 %>%
-  ungroup() %>%
-  left_join(treatDesc) %>%
-  filter(fertType == 'urea') %>%
-  select(dataSource, ratoon_no, fertN_kg_ha, percOfMaxN) %>%
-  spread(fertN_kg_ha, percOfMaxN)
+# Regression summary
 
-d1tmp
-
-# d1FT <- vanilla.table(d1tmp)
-# 
-# for(i in 3:length(colnames(d1tmp))){
-#   d1FT <- setFlexTableBackgroundColors(d1FT, j = i, colors = ifelse(d1tmp[,i] > 95, "orange", "white"))
-# }
-# 
-# cat(as.html(d1FT))
-```
 
 ```{r}
 regrD  <-
   d %>%
-  group_by(dataSource, treatCode, ratoon_no, variable) %>%
+  group_by(dataSource, treatCode, ratoon_no, cropClass, variable) %>%
   summarise(value = mean(value)) %>%
   spread(dataSource, value) %>%
   na.omit()
@@ -305,8 +286,8 @@ regrD  <-
 regrD_nested <-
   regrD %>%
   ungroup() %>%
-  select(ratoon_no, variable, measured, simulated) %>%
-  nest(-ratoon_no, -variable)
+  select(variable, measured, simulated) %>%
+  nest(-variable)
 
 fitLM <- function(x){lm(simulated ~ measured, data=x)}
 gofd <- function(x){
@@ -331,68 +312,23 @@ funcParam <-
 
 ```
 
-# Regression summary
+
 
 ```{r}
 
-grfRegressParams <- function(varName){
+kable(
   funcParam %>%
-    unnest(formula) %>%
-    select(ratoon_no, variable, term, estimate) %>%
-    mutate(term = ifelse(term=='measured', 'slope','intercept')) %>%
-    filter(variable == varName) %>%
-    ggplot(aes(ratoon_no, estimate, fill=ratoon_no))+
-    geom_hline(yintercept=0)+
-    geom_col()+
-    geom_text(aes(label=round(estimate,1)), size=3)+
-    facet_wrap(~term, scales='free_y',ncol=2)+
-    scale_fill_gdocs()+
-    theme_few()+
-    theme(axis.text.x = element_text(angle=90, vjust=0.5, hjust=1))
-}
+    unnest(formula)
+)
 
 gofVariables <-
   model_nested %>%
-  select(ratoon_no, variable, gof) %>%
-  unnest()
+  select(variable, gof) %>%
+  unnest() %>%
+  spread(variable, tmp)
 
-grfVarStat <- function(varName){
-  gofVariables %>%
-    filter(gofTest %in% c('NSE','r','R2','RMSE')) %>%
-    filter(variable == varName) %>%
-    ggplot()+
-    geom_hline(yintercept=0)+
-    geom_col(aes(ratoon_no, tmp, fill=ratoon_no), position='dodge')+
-    geom_text(aes(ratoon_no, tmp, label=tmp), size=3)+
-    facet_grid(gofTest~., scales='free_y')+
-    scale_fill_gdocs()+
-    theme_few()+
-    theme(axis.title.y = element_blank())
-}
+kable(gofVariables)
 
-grfXY <- function(varName){
-  regrD %>%
-    filter(variable == varName) %>%
-    ggplot(aes(measured, simulated, colour=ratoon_no))+
-    geom_point()+
-    geom_smooth(method='lm', se=FALSE)+
-    geom_abline()+
-    scale_colour_gdocs()+
-    theme_few()
-}
-
-grfResponse <- function(varName){
-  regrD %>%
-    filter(variable == varName) %>%
-    gather(dataSource, value, measured, simulated) %>%
-    left_join(treatDesc) %>%
-    ggplot(aes(fertN_kg_ha, value, colour=dataSource))+
-    geom_point()+
-    geom_smooth(se=FALSE)+
-    facet_wrap(~ratoon_no)+
-    scale_colour_gdocs()+
-    theme_few()
-}
 
 
 ```
@@ -400,25 +336,34 @@ grfResponse <- function(varName){
 
 ## Yield
 
-```{r}
-grfRegressParams('yield_t_ha')
-grfVarStat('yield_t_ha')
+```{r warning=FALSE}
+grfResponse <- function(varName){
+  regrD %>%
+    filter(variable == varName) %>%
+    filter(treatCode != 'T4') %>%
+    gather(dataSource, value, measured, simulated) %>%
+    left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
+    ggplot(aes(fertN_kg_ha, value, colour=dataSource))+
+    geom_point()+
+    geom_smooth(se=FALSE)+
+    facet_wrap(~cropClass)+
+    scale_colour_gdocs()+
+    theme_few()
+}
+
 grfResponse('yield_t_ha')
+
+grfXY <- function(varName){
+  regrD %>%
+    filter(variable == varName) %>%
+    left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
+    ggplot(aes(measured, simulated))+
+    geom_point(aes(colour=cropClass))+
+    geom_smooth(method='lm', se=FALSE)+
+    geom_abline()+
+    scale_colour_gdocs()+
+    theme_few()
+}
 grfXY('yield_t_ha')
-```
-
-## Biomass
-
-```{r eval=FALSE, include=FALSE}
-grfRegressParams('biomass_t_ha')
-grfVarStat('biomass_t_ha')
-```
-
-## Biomass-N
-
-```{r eval=FALSE, include=FALSE}
-grfRegressParams('biomassN_kg_ha')
-grfVarStat('biomassN_kg_ha')
-
 ```
 

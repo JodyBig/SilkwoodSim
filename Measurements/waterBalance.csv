@@ -1,0 +1,41 @@
+variable,cropClass,ratoon_no,treatCode,value,variableQuality
+cropRain_mm,Plant,0,T1,1993,measured - multiple sources
+cropRain_mm,Plant,0,T2,1993,measured - multiple sources
+cropRain_mm,Plant,0,T3,1993,measured - multiple sources
+cropRain_mm,Plant,0,T4,1993,measured - multiple sources
+cropRain_mm,Plant,0,T5,NA,measured - multiple sources
+cropRain_mm,Ratoon1,1,T1,2301,measured - multiple sources
+cropRain_mm,Ratoon1,1,T2,2301,measured - multiple sources
+cropRain_mm,Ratoon1,1,T3,2301,measured - multiple sources
+cropRain_mm,Ratoon1,1,T4,2301,measured - multiple sources
+cropRain_mm,Ratoon1,1,T5,NA,measured - multiple sources
+runoff_mm,Plant,0,T1,77,calculated from continuous time series flow data
+runoff_mm,Plant,0,T2,79,calculated from continuous time series flow data
+runoff_mm,Plant,0,T3,274,calculated from continuous time series flow data
+runoff_mm,Plant,0,T4,205,calculated from continuous time series flow data
+runoff_mm,Plant,0,T5,NA,calculated from continuous time series flow data
+runoff_mm,Ratoon1,1,T1,824,calculated from continuous time series flow data
+runoff_mm,Ratoon1,1,T2,951,calculated from continuous time series flow data
+runoff_mm,Ratoon1,1,T3,990,calculated from continuous time series flow data
+runoff_mm,Ratoon1,1,T4,1285,calculated from continuous time series flow data
+runoff_mm,Ratoon1,1,T5,NA,calculated from continuous time series flow data
+drainage_mm,Plant,0,T1,481,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Plant,0,T2,631,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Plant,0,T3,601,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Plant,0,T4,708,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Plant,0,T5,NA,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Ratoon1,1,T1,579,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Ratoon1,1,T2,489,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Ratoon1,1,T3,573,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Ratoon1,1,T4,376,calculated by difference DD = Rain - (RO + ET)
+drainage_mm,Ratoon1,1,T5,NA,calculated by difference DD = Rain - (RO + ET)
+evapotranspiration_mm,Plant,0,T1,1435,modelled using APSIM based on P2R work
+evapotranspiration_mm,Plant,0,T2,1283,modelled using APSIM based on P2R work
+evapotranspiration_mm,Plant,0,T3,1118,modelled using APSIM based on P2R work
+evapotranspiration_mm,Plant,0,T4,1080,modelled using APSIM based on P2R work
+evapotranspiration_mm,Plant,0,T5,NA,modelled using APSIM based on P2R work
+evapotranspiration_mm,Ratoon1,1,T1,898,modelled using APSIM based on P2R work
+evapotranspiration_mm,Ratoon1,1,T2,861,modelled using APSIM based on P2R work
+evapotranspiration_mm,Ratoon1,1,T3,738,modelled using APSIM based on P2R work
+evapotranspiration_mm,Ratoon1,1,T4,640,modelled using APSIM based on P2R work
+evapotranspiration_mm,Ratoon1,1,T5,NA,modelled using APSIM based on P2R work

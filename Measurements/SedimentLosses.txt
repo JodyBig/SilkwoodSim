@@ -1,2 +1,0 @@
-treatCode,cropClass,ratoon_no,TSS_mg_L
-T1,Plant,0,7.4

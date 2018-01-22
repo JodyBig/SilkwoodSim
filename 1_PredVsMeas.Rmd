@@ -42,6 +42,7 @@ library(broom)
 treatDesc <-
   read.csv('./Measurements/TreatmentDescription.csv', stringsAsFactors = FALSE) %>%
   mutate(ratoon_no = as.character(ratoon_no))
+
 kable(treatDesc)
 ```
 
@@ -122,6 +123,7 @@ sim <- do.call("rbind", lapply(apsimFiles, FUN=readIn))
 sim <-
   sim %>%
   tbl_df() %>%
+  filter(Date != '21/07/2014') %>% # remove report at sowing
   mutate(treatValue = str_sub(treatCode, 2,2)) %>%
   mutate(cropClass = case_when(
     ratoon_no == 0 ~ 'Plant',
@@ -129,12 +131,14 @@ sim <-
   )) %>%
   # mutate(cropClass = factor(cropClass, levels=c('Plant', '1st Ratoon'))) %>%
   mutate(yield_t_ha = cane_wt/100/0.3) %>% # convert from g/m2 dry cane to t/ha wet cane with an assumed dmf of 0.3
-  mutate(biomass_t_ha = biomass/100) %>% # convert from g/m2 to t/ha
+  mutate(biomass_kg_ha = biomass) %>% # convert from g/m2 to t/ha
   mutate(biomassN_kg_ha = biomass_n*10) %>% # convert from g/m2 to kg/ha
   select(-cane_wt, -biomass, -biomass_n)
 ```
 
-# Plot average stress indices
+# Simulated Results
+
+## Plot average stress indices
 
 ```{r}
 #### Plot average stress indices ----
@@ -150,7 +154,7 @@ sim %>%
   theme(legend.title = element_blank())
 ```
 
-# Plot a partial N balance
+## Plot a partial N balance
 
 ```{r}
 initialTotN = head(sim$nit_tot..,1)
@@ -177,7 +181,7 @@ ggplot()+
   theme_few()
 ```
 
-# Plot a partial water balance
+## Plot a partial water balance
 
 ```{r}
 #### Plot a partial water balance ----
@@ -194,90 +198,166 @@ sim %>%
   theme_few()
 ```
 
-```{r}
-#### Read in measured data ----
-#### Cane yields ----
-obs <-
-  tbl_df(read.csv('./Measurements/CaneYield.csv', header=TRUE, stringsAsFactors = FALSE)) %>%
-  mutate(treatValue = str_sub(treatCode, 2,2)) %>%
-  gather(variable, value, CCS_perc, TCH_t_ha, DM_t_ha) %>%
-  mutate(ratoon_no = case_when(
-    cropClass == 'Plant' ~ '0',
-    TRUE ~ str_extract(cropClass,'[0-9]'))
-  )
 
-sim1 <-
-  sim %>%
-  select(treatCode, treatValue, ratoon_no, cropClass, yield_t_ha, biomass_t_ha) %>%
-  mutate(ratoon_no = as.character(ratoon_no)) %>%
-  mutate(cropClass = as.character(cropClass)) %>%
-  mutate(dataSource = 'simulated') %>%
-  gather(variable, value, yield_t_ha, biomass_t_ha)
 
-obs1 <-
-  obs %>%
-  filter(variable %in% c("TCH_t_ha","DM_t_ha")) %>%
-  mutate(variable = case_when(
-    variable == "TCH_t_ha" ~ 'yield_t_ha',
-    variable == "DM_t_ha" ~ 'biomass_t_ha'
-    )) %>%
-  mutate(dataSource = 'measured') %>%
-  select(treatCode, treatValue, ratoon_no, cropClass, dataSource, variable, value)
 
-d <-
-  obs1 %>%
-  bind_rows(sim1)
-```
 
 # Simulated vs Observed
 
-## Mean cane yield and biomass
+## Crop data
 
 ```{r}
-#### Compare mean yield and biomass using actual yields ----
-d %>%
-  mutate(variable = factor(variable, levels=c('yield_t_ha', 'biomass_t_ha'), labels = c('Cane yield (t/ha)', 'Dry plant biomass(t/ha)'))) %>%
-  na.omit() %>%
-  ggplot(aes(as.numeric(treatValue), value, colour=dataSource))+
-  geom_point()+
-  facet_grid(variable~cropClass, scale='free_y', switch='y')+
-  xlab('Fertiliser N Treatment (kgN/ha)')+
-  scale_colour_colorblind()+
-  theme_few()+
-  theme(axis.title.y = element_blank())
+#### Read in measured data ----
+#### Cane yields ----
+obsCrop <-
+  read.csv('./Measurements/cropMeans.csv',
+           header=TRUE, stringsAsFactors = FALSE) %>%
+  tbl_df() %>%
+  mutate(ratoon_no = as.character(ratoon_no)) %>%
+  mutate(treatValue = str_sub(treatCode, 2,2)) %>%
+  mutate(dataSource = 'measured') %>%
+  select(treatCode, treatValue, ratoon_no, cropClass, dataSource, variable, value)
+
+simCrop <-
+  sim %>%
+  select(treatCode, treatValue, ratoon_no, cropClass, yield_t_ha, biomass_kg_ha, biomassN_kg_ha, stem_N, leaf_N, cabb_N) %>%
+  mutate(ratoon_no = as.character(ratoon_no)) %>%
+  mutate(cropClass = as.character(cropClass)) %>%
+  mutate(dataSource = 'simulated') %>%
+  mutate(stemN_kg_ha = stem_N * 10) %>%
+  mutate(topsN_kg_ha = (leaf_N * 10) + (cabb_N * 10)) %>%
+  select(-stem_N, -leaf_N, -cabb_N) %>%
+  gather(variable, value, yield_t_ha, biomass_kg_ha, biomassN_kg_ha, stemN_kg_ha, topsN_kg_ha)
+
+d <-
+  obsCrop %>%
+  bind_rows(simCrop) %>%
+  mutate(varDesc = 
+           factor(variable,
+                  levels=c('biomass_kg_ha', 'biomassN_kg_ha', 'stemN_kg_ha', 'topsN_kg_ha', 'yield_t_ha'),
+                  labels = c('Dry plant biomass(t/ha)', 'Biomass N (kg/ha)', 'Stem N (kg/ha)', 'Tops N (kg/ha)', 'Cane yield (t/ha)')))
 ```
 
-## Determine the N rate/s where 95% of yield at maximum N was achieved
+- aboveground biomass appears to be measured but not reported.
 
-```{r}
-#### Determine the N rate/s where 95% of yield at maximum N was achieved ----
 
-d1 <-
-  d %>%
-  filter(variable == 'yield_t_ha') %>%
-  group_by(dataSource, ratoon_no, treatCode, variable) %>%
-  summarise(meanYld = mean(value))
-
-n240Values <-
-  d1 %>%
-  filter(treatCode == 'T1') %>%
-  mutate(AtMaxN = meanYld) %>%
-  ungroup() %>%
-  select(-treatCode, -meanYld)
-
-d1 <-
-  d1 %>%
-  left_join(n240Values, by = c("dataSource", "ratoon_no", "variable")) %>%
-  mutate(percOfMaxN = meanYld/AtMaxN * 100)
-
-```
-
-# Regression summary
-
+### Regression summary
 
 ```{r}
 regrD  <-
   d %>%
+  group_by(dataSource, treatCode, ratoon_no, cropClass, varDesc) %>%
+  summarise(value = mean(value)) %>%
+  spread(dataSource, value) %>%
+  na.omit()
+
+regrD_nested <-
+  regrD %>%
+  ungroup() %>%
+  select(varDesc, measured, simulated) %>%
+  nest(-varDesc)
+
+fitLM <- function(x){lm(simulated ~ measured, data=x)}
+gofd <- function(x){
+  tmp <- gof(sim=x$simulated, obs=x$measured)
+  data.frame(gofTest=row.names(tmp), tmp)
+  }
+
+model_nested <-
+  regrD_nested %>%
+  mutate(fit = map(data, fitLM)) %>%
+  mutate(gof = map(data, gofd))
+
+funcParam <-
+  model_nested %>%
+  rowwise() %>%
+  do(params = glance(.$fit),
+     formula = tidy(.$fit))
+
+funcParam <-
+  model_nested %>%
+  bind_cols(funcParam)
+
+kable(
+  funcParam %>% unnest(formula)
+)
+
+```
+
+### Model goodness-of-fit (gof)
+
+```{r}
+gofVariables <-
+  model_nested %>%
+  select(varDesc, gof) %>%
+  unnest() %>%
+  spread(varDesc, tmp)
+
+kable(gofVariables)
+```
+
+### Nitrogen response graphs
+
+```{r fig.width=7, fig.height=8}
+regrD %>%
+  filter(treatCode != 'T4') %>%
+  gather(dataSource, value, measured, simulated) %>%
+  left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
+  ggplot(aes(fertN_kg_ha, value, colour=dataSource))+
+  geom_point()+
+  geom_line()+
+  facet_grid(varDesc~cropClass, scales='free_y')+
+  scale_colour_gdocs()+
+  theme_few()
+```
+
+### X-Y plots
+
+```{r}
+regrD %>%  
+  left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
+  ggplot(aes(measured, simulated))+
+  geom_point()+
+  geom_smooth(method='lm', se=FALSE)+
+  geom_abline()+
+  scale_colour_gdocs()+
+  facet_grid(~varDesc, scales='free_y')+
+  theme_few()
+```
+
+## Water data
+
+```{r}
+obsWater <- 
+  read.csv('./Measurements/waterBalance.csv', stringsAsFactors = FALSE) %>%
+  tbl_df() %>%
+  mutate(ratoon_no = as.character(ratoon_no)) %>%
+  mutate(treatValue = str_sub(treatCode,2,2)) %>%
+  mutate(dataSource = 'measured') %>%
+  select(dataSource, treatCode, ratoon_no, cropClass, variable, value)
+
+simWater <-
+  sim %>%
+  mutate(ratoon_no = as.character(ratoon_no),
+         cropClass = as.character(cropClass),
+         dataSource = 'simulated',
+         cropRain_mm = sumRain,
+         drainage_mm = sumDrain,
+         evapotranspiration_mm = sumEP + sumES,
+         runoff_mm = sumRunoff) %>%
+  select(dataSource, treatCode, ratoon_no, cropClass, cropRain_mm, drainage_mm, evapotranspiration_mm, runoff_mm) %>%
+  gather(variable, value, cropRain_mm, drainage_mm, evapotranspiration_mm, runoff_mm)
+
+ddWater <- 
+  obsWater %>%
+  bind_rows(simWater)
+```
+
+### Regression summary
+
+```{r}
+regrD  <-
+  ddWater %>%
   group_by(dataSource, treatCode, ratoon_no, cropClass, variable) %>%
   summarise(value = mean(value)) %>%
   spread(dataSource, value) %>%
@@ -310,17 +390,14 @@ funcParam <-
   model_nested %>%
   bind_cols(funcParam)
 
+kable(
+  funcParam %>% unnest(formula)
+)
 ```
 
-
+### Model goodness-of-fit (gof)
 
 ```{r}
-
-kable(
-  funcParam %>%
-    unnest(formula)
-)
-
 gofVariables <-
   model_nested %>%
   select(variable, gof) %>%
@@ -328,42 +405,66 @@ gofVariables <-
   spread(variable, tmp)
 
 kable(gofVariables)
+```
 
+### Nitrogen response graphs
 
+```{r fig.width=7, fig.height=8}
+regrD %>%
+  filter(treatCode != 'T4') %>%
+  gather(dataSource, value, measured, simulated) %>%
+  left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
+  ggplot(aes(fertN_kg_ha, value, colour=dataSource))+
+  geom_point()+
+  geom_line()+
+  facet_grid(variable~cropClass, scales='free_y')+
+  scale_colour_gdocs()+
+  theme_few()
+```
 
+### X-Y plots
+
+```{r}
+regrD %>%  
+  left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
+  ggplot(aes(measured, simulated))+
+  geom_point()+
+  geom_smooth(method='lm', se=FALSE)+
+  geom_abline()+
+  scale_colour_gdocs()+
+  facet_grid(~variable, scales='free_y')+
+  theme_few()
 ```
 
 
-## Yield
 
-```{r warning=FALSE}
-grfResponse <- function(varName){
-  regrD %>%
-    filter(variable == varName) %>%
-    filter(treatCode != 'T4') %>%
-    gather(dataSource, value, measured, simulated) %>%
-    left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
-    ggplot(aes(fertN_kg_ha, value, colour=dataSource))+
-    geom_point()+
-    geom_smooth(se=FALSE)+
-    facet_wrap(~cropClass)+
-    scale_colour_gdocs()+
-    theme_few()
-}
 
-grfResponse('yield_t_ha')
 
-grfXY <- function(varName){
-  regrD %>%
-    filter(variable == varName) %>%
-    left_join(treatDesc, by = c("treatCode", "ratoon_no")) %>%
-    ggplot(aes(measured, simulated))+
-    geom_point(aes(colour=cropClass))+
-    geom_smooth(method='lm', se=FALSE)+
-    geom_abline()+
-    scale_colour_gdocs()+
-    theme_few()
-}
-grfXY('yield_t_ha')
+# Further Analysis (incl OptN)
+
+## Determine the N rate/s where 95% of yield at maximum N was achieved
+
+```{r}
+#### Determine the N rate/s where 95% of yield at maximum N was achieved ----
+
+d1 <-
+  d %>%
+  filter(variable == 'yield_t_ha') %>%
+  group_by(dataSource, ratoon_no, treatCode, variable) %>%
+  summarise(meanYld = mean(value))
+
+n240Values <-
+  d1 %>%
+  filter(treatCode == 'T1') %>%
+  mutate(AtMaxN = meanYld) %>%
+  ungroup() %>%
+  select(-treatCode, -meanYld)
+
+d1 <-
+  d1 %>%
+  left_join(n240Values, by = c("dataSource", "ratoon_no", "variable")) %>%
+  mutate(percOfMaxN = meanYld/AtMaxN * 100)
+
+kable(d1)
+
 ```
-

@@ -121,9 +121,9 @@
     <PlugIn enabled="yes">%apsim%\Model\Weed.xml</PlugIn>
     <PlugIn enabled="yes">%apsim%\Model\Wheat.xml</PlugIn>
     <PlugIn enabled="yes">%apsim%\Model\YPCalc.xml</PlugIn>
-    <PlugIn enabled="yes">C:\Sync\Apswork\BronwynMastersExperiment_Silkwood\Soil_V79.xml</PlugIn>
-    <PlugIn enabled="yes">C:\Sync\Apswork\BronwynMastersExperiment_Silkwood\Sugar_V79.xml</PlugIn>
-    <PlugIn enabled="yes">C:\Sync\Apswork\BronwynMastersExperiment_Silkwood\SurfaceOM_V79.xml</PlugIn>
+    <PlugIn enabled="yes">Soil_V79.xml</PlugIn>
+    <PlugIn enabled="yes">Sugar_V79.xml</PlugIn>
+    <PlugIn enabled="yes">SurfaceOM_V79.xml</PlugIn>
   </PlugIns>
   <simulation name="T1">
     <metfile name="met">
@@ -593,8 +593,14 @@ endif</text>
           <variable>tracker.avgOXDEFstress</variable>
           <variable>nit_tot()</variable>
           <variable>sumNinRO</variable>
+          <variable>n_green(1) as root_N</variable>
+          <variable>n_green(2) as leaf_N</variable>
+          <variable>n_green(3) as stem_N</variable>
+          <variable>n_green(4) as cabb_N</variable>
+          <variable>n_green(5) as sucr_N</variable>
         </variables>
         <events name="Reporting Frequency">
+          <event>sowing</event>
           <event>harvesting</event>
         </events>
       </outputfile>

@@ -1,6 +1,6 @@
 ---
 title: "Sim vs Obs for Bronwyn Masters' Silkwood experiment on a Bulgun soil"
-author: "Jody Biggs"
+author: "Bianca Das & Jody Biggs"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   html_document:
@@ -16,11 +16,15 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(stringr)
-library(tidyverse)
+#library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(ggplot2)
 library(ggthemes)
 library(knitr)
-library(ReporteRs)
-library(ReporteRsjars)
+# library(ReporteRs)
+# library(ReporteRsjars)
 library(hydroGOF)
 library(broom)
 ```

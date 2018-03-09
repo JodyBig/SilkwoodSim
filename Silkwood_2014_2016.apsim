@@ -125,7 +125,7 @@
     <PlugIn enabled="yes">Sugar_V79.xml</PlugIn>
     <PlugIn enabled="yes">SurfaceOM_V79.xml</PlugIn>
   </PlugIns>
-  <simulation name="T1">
+  <simulation name="T1-BD">
     <metfile name="met">
       <filename name="filename" input="yes">bingalbay.met</filename>
     </metfile>
@@ -459,7 +459,7 @@
       <surfaceom name="SurfaceOrganicMatter">
         <PoolName type="text" description="Organic Matter pool name">soybean</PoolName>
         <type type="list" listvalues="bambatsi,barley,base_type,broccoli,camaldulensis,canola,centro,chickpea,chikenmanure_base,cm,cmA,cmB,constants,cotton,cowpea,danthonia,fababean,fieldpea,fym,gbean,globulus,goatmanure,grandis,grass,horsegram,inert,lablab,lentil,lucerne,lupin,maize,manB,manure,medic,millet,mucuna,nativepasture,navybean,oats,orobanche,peanut,pigeonpea,potato,rice,sorghum,soybean,stylo,sugar,sunflower,sweetcorn,sweetsorghum,tillage,tithonia,vetch,weed,WF_Millet,wheat" description="Organic Matter type">soybean</type>
-        <mass type="text" description="Initial surface residue (kg/ha)">2500</mass>
+        <mass type="text" description="Initial surface residue (kg/ha)">0</mass>
         <cnr type="text" description="C:N ratio of initial residue">40.0</cnr>
         <cpr type="text" description="C:P ratio of initial residue (optional)" />
         <standing_fraction type="text" description="Fraction of residue standing">0.0</standing_fraction>
@@ -470,19 +470,19 @@
         <operations name="Operations Schedule">
           <operation condition="start_of_day">
             <date>21/6/2014</date>
-            <action>'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm)</action>
+            <action>!'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm) !Bianca commented out</action>
           </operation>
           <operation condition="start_of_day">
             <date>21/7/2014</date>
-            <action>sugar sow plants = 10 (), cultivar = 'q117', sowing_depth = 150 (mm)</action>
+            <action>sugar sow plants = 10 (), cultivar = 'q117', sowing_depth = 150 (mm), row_spacing = 1000 (mm)</action>
           </operation>
           <operation condition="start_of_day">
             <date>21/7/2014</date>
-            <action>fertiliser apply amount = 35.5 (kg/ha), depth = 150 (mm), type = 'nh4_n' ()</action>
+            <action>fertiliser apply amount = 29.5 (kg/ha), depth = 150 (mm), type = 'nh4_n' () !Bianca reduced N fert</action>
           </operation>
           <operation condition="start_of_day">
             <date>22/10/2014</date>
-            <action>fertiliser apply amount = 158.5 (kg/ha), depth = 150 (mm), type = 'urea_n' ()</action>
+            <action>fertiliser apply amount = 158.5 (kg/ha), depth = 50 (mm), type = 'urea_n' () !Bianca reduced N depth</action>
           </operation>
           <operation condition="start_of_day">
             <date>11/11/2015</date>
@@ -493,8 +493,8 @@
             <action>fertiliser apply amount = 190 (kg/ha), depth = 50 (mm), type = 'urea_n' ()</action>
           </operation>
           <operation condition="start_of_day">
-            <date>28/11/2016</date>
-            <action>sugar harvest !Assumed based on soil sampling date</action>
+            <date>25/11/2016</date>
+            <action>sugar harvest !Assumed based on soil sampling date !Bianca changed harvest date</action>
           </operation>
           <operation condition="start_of_day">
             <date>
@@ -629,8 +629,8 @@ endif</text>
         </manager>
       </folder>
       <outputfile name="harvest">
-        <filename output="yes">T1 harvest.out</filename>
-        <title>T1 harvest</title>
+        <filename output="yes">T1-BD harvest.out</filename>
+        <title>T1-BD harvest</title>
         <variables name="Variables">
           <variable>dd/mm/yyyy as Date</variable>
           <variable>biomass</variable>
@@ -663,6 +663,7 @@ endif</text>
           <variable>n_green(3) as stem_N</variable>
           <variable>n_green(4) as cabb_N</variable>
           <variable>n_green(5) as sucr_N</variable>
+          <variable>canefw</variable>
         </variables>
         <events name="Reporting Frequency">
           <event>sowing</event>
@@ -670,8 +671,8 @@ endif</text>
         </events>
       </outputfile>
       <outputfile name="daily">
-        <filename output="yes">T1 daily.out</filename>
-        <title>T1 daily</title>
+        <filename output="yes">T1-BD daily.out</filename>
+        <title>T1-BD daily</title>
         <variables name="Variables">
           <variable>dd/mm/yyyy as Date</variable>
           <variable>biomass</variable>
@@ -705,14 +706,36 @@ endif</text>
           <variable>nh4(1) as nh4_0_20</variable>
           <variable>nh4(3) as nh4_40_60</variable>
           <variable>nh4(5) as nh4_80_100</variable>
+          <variable>water_table</variable>
+          <variable>LodgeFlag = 0</variable>
         </variables>
         <events name="Reporting Frequency">
           <event>post</event>
         </events>
+        <Graph name="XY">
+          <Legend>
+            <CheckedTitles> T1-BD daily</CheckedTitles>
+          </Legend>
+          <Plot>
+            <SeriesType>Solid line</SeriesType>
+            <PointType>Circle</PointType>
+            <colour>
+            </colour>
+            <X>Date</X>
+            <Y>biomass</Y>
+            <GDApsimFileReader name="ApsimFileReader">
+              <FileName>T1-BD daily.out</FileName>
+              <FileName>T2 daily.out</FileName>
+              <FileName>T3 daily.out</FileName>
+              <FileName>T4 daily.out</FileName>
+              <FileName>T5 daily.out</FileName>
+            </GDApsimFileReader>
+          </Plot>
+        </Graph>
       </outputfile>
       <outputfile name="layered">
-        <filename output="yes">T1 layered.out</filename>
-        <title>T1 layered</title>
+        <filename output="yes">T1-BD layered.out</filename>
+        <title>T1-BD layered</title>
         <variables name="Variables">
           <variable>dd/mm/yyyy as Date</variable>
           <variable>sw</variable>
@@ -741,24 +764,24 @@ endif</text>
       </tracker>
     </area>
   </simulation>
-  <simulation name="T2" shortcut="/simulations/T1">
-    <metfile name="met" shortcut="/simulations/T1/met" />
-    <clock shortcut="/simulations/T1/clock" />
-    <summaryfile shortcut="/simulations/T1/summaryfile" />
-    <area name="paddock" shortcut="/simulations/T1/paddock">
-      <Soil name="Bulgun_NEW" shortcut="/simulations/T1/paddock/BulgR">
-        <Water shortcut="/simulations/T1/paddock/BulgR/Water" />
-        <SoilWater shortcut="/simulations/T1/paddock/BulgR/SoilWater" />
-        <SoilOrganicMatter shortcut="/simulations/T1/paddock/BulgR/SoilOrganicMatter" />
-        <Analysis shortcut="/simulations/T1/paddock/BulgR/Analysis" />
-        <InitialWater shortcut="/simulations/T1/paddock/BulgR/InitialWater" />
-        <Sample name="Initial nitrogen" shortcut="/simulations/T1/paddock/BulgR/Initial nitrogen" />
+  <simulation name="T2" shortcut="/simulations/T1-BD">
+    <metfile name="met" shortcut="/simulations/T1-BD/met" />
+    <clock shortcut="/simulations/T1-BD/clock" />
+    <summaryfile shortcut="/simulations/T1-BD/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T1-BD/paddock">
+      <Soil name="Bulgun_NEW" shortcut="/simulations/T1-BD/paddock/BulgR">
+        <Water shortcut="/simulations/T1-BD/paddock/BulgR/Water" />
+        <SoilWater shortcut="/simulations/T1-BD/paddock/BulgR/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T1-BD/paddock/BulgR/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T1-BD/paddock/BulgR/Analysis" />
+        <InitialWater shortcut="/simulations/T1-BD/paddock/BulgR/InitialWater" />
+        <Sample name="Initial nitrogen" shortcut="/simulations/T1-BD/paddock/BulgR/Initial nitrogen" />
       </Soil>
-      <erosion name="Erosion" shortcut="/simulations/T1/paddock/Erosion" />
-      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T1/paddock/SurfaceOrganicMatter" />
-      <fertiliser shortcut="/simulations/T1/paddock/fertiliser" />
-      <sugar shortcut="/simulations/T1/paddock/sugar" />
-      <folder name="Manager folder" shortcut="/simulations/T1/paddock/Manager folder">
+      <erosion name="Erosion" shortcut="/simulations/T1-BD/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T1-BD/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T1-BD/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T1-BD/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T1-BD/paddock/Manager folder">
         <operations name="Operations Schedule">
           <operation condition="start_of_day">
             <date>21/6/2014</date>
@@ -825,29 +848,29 @@ endif</text>
             </action>
           </operation>
         </operations>
-        <manager name="wet based lodging" shortcut="/simulations/T1/paddock/Manager folder/wet based lodging" />
-        <manager name="Lodging" shortcut="/simulations/T1/paddock/Manager folder/Lodging" />
-        <manager name="NinRunoff" shortcut="/simulations/T1/paddock/Manager folder/NinRunoff" />
+        <manager name="wet based lodging" shortcut="/simulations/T1-BD/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T1-BD/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T1-BD/paddock/Manager folder/NinRunoff" />
       </folder>
-      <outputfile name="harvest" shortcut="/simulations/T1/paddock/harvest">
+      <outputfile name="harvest" shortcut="/simulations/T1-BD/paddock/harvest">
         <filename output="yes">T2 harvest.out</filename>
         <title>T2 harvest</title>
-        <variables name="Variables" shortcut="/simulations/T1/paddock/harvest/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T1/paddock/harvest/Reporting Frequency" />
+        <variables name="Variables" shortcut="/simulations/T1-BD/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1-BD/paddock/harvest/Reporting Frequency" />
       </outputfile>
-      <outputfile name="daily" shortcut="/simulations/T1/paddock/daily">
+      <outputfile name="daily" shortcut="/simulations/T1-BD/paddock/daily">
         <filename output="yes">T2 daily.out</filename>
         <title>T2 daily</title>
-        <variables name="Variables" shortcut="/simulations/T1/paddock/daily/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T1/paddock/daily/Reporting Frequency" />
+        <variables name="Variables" shortcut="/simulations/T1-BD/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1-BD/paddock/daily/Reporting Frequency" />
       </outputfile>
-      <outputfile name="layered" shortcut="/simulations/T1/paddock/layered">
+      <outputfile name="layered" shortcut="/simulations/T1-BD/paddock/layered">
         <filename output="yes">T2 layered.out</filename>
         <title>T2 layered</title>
-        <variables name="Variables" shortcut="/simulations/T1/paddock/layered/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T1/paddock/layered/Reporting Frequency" />
+        <variables name="Variables" shortcut="/simulations/T1-BD/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1-BD/paddock/layered/Reporting Frequency" />
       </outputfile>
-      <tracker shortcut="/simulations/T1/paddock/tracker" />
+      <tracker shortcut="/simulations/T1-BD/paddock/tracker" />
     </area>
   </simulation>
   <simulation name="T3" shortcut="/simulations/T2">

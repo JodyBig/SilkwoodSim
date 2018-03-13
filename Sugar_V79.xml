@@ -277,7 +277,7 @@
       <k_nfact_stalk>1</k_nfact_stalk>
       <k_nfact_pheno>100</k_nfact_pheno>
       <oxdef_photo_rtfr>0.5 0.8</oxdef_photo_rtfr>
-      <oxdef_photo>1.0 1.0</oxdef_photo>
+      <oxdef_photo>1.0 0.2</oxdef_photo>
       <x_afps description="Air filled pore space (mm3 air/mm3 soil volume)">0.03 .05         </x_afps>
       <y_afps_fac description="Modifier for root function">1     1          </y_afps_fac>
       <cane_dmf_max>0.11 .17 0.23</cane_dmf_max>
@@ -500,7 +500,7 @@
       <k_nfact_stalk>1</k_nfact_stalk>
       <k_nfact_pheno>100</k_nfact_pheno>
       <oxdef_photo_rtfr>0.5 0.8</oxdef_photo_rtfr>
-      <oxdef_photo>1.0 1.0</oxdef_photo>
+      <oxdef_photo>1.0 0.2</oxdef_photo>
       <x_afps description="Air filled pore space (mm3 air/mm3 soil volume)">0.03 .05         </x_afps>
       <y_afps_fac description="Modifier for root function">1     1          </y_afps_fac>
       <cane_dmf_max>0.11 .17 0.23</cane_dmf_max>

@@ -125,7 +125,7 @@
     <PlugIn enabled="yes">Sugar_V79.xml</PlugIn>
     <PlugIn enabled="yes">SurfaceOM_V79.xml</PlugIn>
   </PlugIns>
-  <simulation name="T1-BD">
+  <simulation name="T1-BD_hiC">
     <metfile name="met">
       <filename name="filename" input="yes">bingalbay.met</filename>
     </metfile>
@@ -316,7 +316,7 @@
             <double>300</double>
           </Thickness>
           <OC>
-            <double>2.24</double>
+            <double>5.7</double>
             <double>0.721</double>
             <double>0.966</double>
             <double>0.578</double>
@@ -409,9 +409,9 @@
             <double>300</double>
           </Thickness>
           <NO3>
-            <double>4.5014598540145982</double>
-            <double>4.6719696969696969</double>
-            <double>5.013821138211382</double>
+            <double>6.167</double>
+            <double>6.167</double>
+            <double>6.167</double>
             <double>0</double>
             <double>0</double>
             <double>0</double>
@@ -419,9 +419,9 @@
             <double>0</double>
           </NO3>
           <NH4>
-            <double>4.5014598540145982</double>
-            <double>4.6719696969696969</double>
-            <double>5.013821138211382</double>
+            <double>6.167</double>
+            <double>6.167</double>
+            <double>6.167</double>
             <double>0</double>
             <double>0</double>
             <double>0</double>
@@ -438,8 +438,8 @@
             <double>0.391</double>
             <double>0.406</double>
           </SW>
-          <NO3Units>ppm</NO3Units>
-          <NH4Units>ppm</NH4Units>
+          <NO3Units>kgha</NO3Units>
+          <NH4Units>kgha</NH4Units>
           <SWUnits>Volumetric</SWUnits>
           <OCUnits>Total</OCUnits>
           <PHUnits>Water</PHUnits>
@@ -621,8 +621,8 @@ endif</text>
         </manager>
       </folder>
       <outputfile name="harvest">
-        <filename output="yes">T1-BD harvest.out</filename>
-        <title>T1-BD harvest</title>
+        <filename output="yes">T1-BD_hiC harvest.out</filename>
+        <title>T1-BD_hiC harvest</title>
         <variables name="Variables">
           <variable>dd/mm/yyyy as Date</variable>
           <variable>biomass</variable>
@@ -663,8 +663,8 @@ endif</text>
         </events>
       </outputfile>
       <outputfile name="daily">
-        <filename output="yes">T1-BD daily.out</filename>
-        <title>T1-BD daily</title>
+        <filename output="yes">T1-BD_hiC daily.out</filename>
+        <title>T1-BD_hiC daily</title>
         <variables name="Variables">
           <variable>dd/mm/yyyy as Date</variable>
           <variable>biomass</variable>
@@ -709,11 +709,21 @@ endif</text>
         </events>
         <Graph name="XY">
           <Legend>
-            <CheckedTitles> no3(), T1-BD daily</CheckedTitles>
-            <CheckedTitles> no3(), T2-BD daily</CheckedTitles>
-            <CheckedTitles> no3(), T3-BD daily</CheckedTitles>
-            <CheckedTitles> no3(), T4-BD daily</CheckedTitles>
-            <CheckedTitles> no3(), T5-BD daily</CheckedTitles>
+            <CheckedTitles> cane_wt, T1-BD daily</CheckedTitles>
+            <CheckedTitles> cane_wt, T2-BD daily</CheckedTitles>
+            <CheckedTitles> cane_wt, T3-BD daily</CheckedTitles>
+            <CheckedTitles> cane_wt, T4-BD daily</CheckedTitles>
+            <CheckedTitles> cane_wt, T5-BD daily</CheckedTitles>
+            <CheckedTitles> nit_tot(), T1-BD daily</CheckedTitles>
+            <CheckedTitles> nit_tot(), T2-BD daily</CheckedTitles>
+            <CheckedTitles> nit_tot(), T3-BD daily</CheckedTitles>
+            <CheckedTitles> nit_tot(), T4-BD daily</CheckedTitles>
+            <CheckedTitles> nit_tot(), T5-BD daily</CheckedTitles>
+            <CheckedTitles> oxdef_photo, T1-BD daily</CheckedTitles>
+            <CheckedTitles> oxdef_photo, T2-BD daily</CheckedTitles>
+            <CheckedTitles> oxdef_photo, T3-BD daily</CheckedTitles>
+            <CheckedTitles> oxdef_photo, T4-BD daily</CheckedTitles>
+            <CheckedTitles> oxdef_photo, T5-BD daily</CheckedTitles>
           </Legend>
           <Plot>
             <SeriesType>Solid line</SeriesType>
@@ -721,8 +731,9 @@ endif</text>
             <colour>
             </colour>
             <X>Date</X>
-            <Y>no3()</Y>
-            <Y>nh4()</Y>
+            <YRight>nit_tot()</YRight>
+            <Y>cane_wt</Y>
+            <YRight>oxdef_photo</YRight>
             <GDApsimFileReader name="ApsimFileReader">
               <FileName>T1-BD daily.out</FileName>
               <FileName>T2-BD daily.out</FileName>
@@ -734,8 +745,8 @@ endif</text>
         </Graph>
       </outputfile>
       <outputfile name="layered">
-        <filename output="yes">T1-BD layered.out</filename>
-        <title>T1-BD layered</title>
+        <filename output="yes">T1-BD_hiC layered.out</filename>
+        <title>T1-BD_hiC layered</title>
         <variables name="Variables">
           <variable>dd/mm/yyyy as Date</variable>
           <variable>sw</variable>
@@ -764,17 +775,17 @@ endif</text>
       </tracker>
     </area>
   </simulation>
-  <simulation name="T2-BD" shortcut="/simulations/T1-BD">
-    <metfile name="met" shortcut="/simulations/T1-BD/met" />
-    <clock shortcut="/simulations/T1-BD/clock" />
-    <summaryfile shortcut="/simulations/T1-BD/summaryfile" />
-    <area name="paddock" shortcut="/simulations/T1-BD/paddock">
-      <Soil name="BulgR" shortcut="/simulations/T1-BD/paddock/BulgR">
-        <Water shortcut="/simulations/T1-BD/paddock/BulgR/Water" />
-        <SoilWater shortcut="/simulations/T1-BD/paddock/BulgR/SoilWater" />
-        <SoilOrganicMatter shortcut="/simulations/T1-BD/paddock/BulgR/SoilOrganicMatter" />
-        <Analysis shortcut="/simulations/T1-BD/paddock/BulgR/Analysis" />
-        <InitialWater shortcut="/simulations/T1-BD/paddock/BulgR/InitialWater" />
+  <simulation name="T2-BD_hiC" shortcut="/simulations/T1-BD_hiC">
+    <metfile name="met" shortcut="/simulations/T1-BD_hiC/met" />
+    <clock shortcut="/simulations/T1-BD_hiC/clock" />
+    <summaryfile shortcut="/simulations/T1-BD_hiC/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T1-BD_hiC/paddock">
+      <Soil name="BulgR" shortcut="/simulations/T1-BD_hiC/paddock/BulgR">
+        <Water shortcut="/simulations/T1-BD_hiC/paddock/BulgR/Water" />
+        <SoilWater shortcut="/simulations/T1-BD_hiC/paddock/BulgR/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T1-BD_hiC/paddock/BulgR/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T1-BD_hiC/paddock/BulgR/Analysis" />
+        <InitialWater shortcut="/simulations/T1-BD_hiC/paddock/BulgR/InitialWater" />
         <Sample name="Initial nitrogen">
           <Thickness>
             <double>100</double>
@@ -823,14 +834,14 @@ endif</text>
           <PHUnits>Water</PHUnits>
         </Sample>
       </Soil>
-      <erosion name="Erosion" shortcut="/simulations/T1-BD/paddock/Erosion" />
-      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T1-BD/paddock/SurfaceOrganicMatter" />
-      <fertiliser shortcut="/simulations/T1-BD/paddock/fertiliser" />
-      <sugar shortcut="/simulations/T1-BD/paddock/sugar" />
-      <folder name="Manager folder" shortcut="/simulations/T1-BD/paddock/Manager folder">
+      <erosion name="Erosion" shortcut="/simulations/T1-BD_hiC/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T1-BD_hiC/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T1-BD_hiC/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T1-BD_hiC/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T1-BD_hiC/paddock/Manager folder">
         <operations name="Operations Schedule">
           <operation condition="start_of_day">
-            <date>21/06/2014</date>
+            <date>21/6/2014</date>
             <action>!'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm) !Bianca commented out</action>
           </operation>
           <operation condition="start_of_day">
@@ -888,21 +899,21 @@ endif</text>
             </action>
           </operation>
         </operations>
-        <manager name="wet based lodging" shortcut="/simulations/T1-BD/paddock/Manager folder/wet based lodging" />
-        <manager name="Lodging" shortcut="/simulations/T1-BD/paddock/Manager folder/Lodging" />
-        <manager name="NinRunoff" shortcut="/simulations/T1-BD/paddock/Manager folder/NinRunoff" />
+        <manager name="wet based lodging" shortcut="/simulations/T1-BD_hiC/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T1-BD_hiC/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T1-BD_hiC/paddock/Manager folder/NinRunoff" />
       </folder>
-      <outputfile name="harvest" shortcut="/simulations/T1-BD/paddock/harvest">
-        <filename output="yes">T2-BD harvest.out</filename>
-        <title>T2-BD harvest</title>
-        <variables name="Variables" shortcut="/simulations/T1-BD/paddock/harvest/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T1-BD/paddock/harvest/Reporting Frequency" />
+      <outputfile name="harvest" shortcut="/simulations/T1-BD_hiC/paddock/harvest">
+        <filename output="yes">T2-BD_hiC harvest.out</filename>
+        <title>T2-BD_hiC harvest</title>
+        <variables name="Variables" shortcut="/simulations/T1-BD_hiC/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1-BD_hiC/paddock/harvest/Reporting Frequency" />
       </outputfile>
-      <outputfile name="daily" shortcut="/simulations/T1-BD/paddock/daily">
-        <filename output="yes">T2-BD daily.out</filename>
-        <title>T2-BD daily</title>
-        <variables name="Variables" shortcut="/simulations/T1-BD/paddock/daily/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T1-BD/paddock/daily/Reporting Frequency" />
+      <outputfile name="daily" shortcut="/simulations/T1-BD_hiC/paddock/daily">
+        <filename output="yes">T2-BD_hiC daily.out</filename>
+        <title>T2-BD_hiC daily</title>
+        <variables name="Variables" shortcut="/simulations/T1-BD_hiC/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1-BD_hiC/paddock/daily/Reporting Frequency" />
         <Graph name="XY">
           <Legend />
           <Plot>
@@ -915,26 +926,26 @@ endif</text>
           </Plot>
         </Graph>
       </outputfile>
-      <outputfile name="layered" shortcut="/simulations/T1-BD/paddock/layered">
-        <filename output="yes">T2-BD layered.out</filename>
-        <title>T2-BD layered</title>
-        <variables name="Variables" shortcut="/simulations/T1-BD/paddock/layered/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T1-BD/paddock/layered/Reporting Frequency" />
+      <outputfile name="layered" shortcut="/simulations/T1-BD_hiC/paddock/layered">
+        <filename output="yes">T2-BD_hiC layered.out</filename>
+        <title>T2-BD_hiC layered</title>
+        <variables name="Variables" shortcut="/simulations/T1-BD_hiC/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1-BD_hiC/paddock/layered/Reporting Frequency" />
       </outputfile>
-      <tracker shortcut="/simulations/T1-BD/paddock/tracker" />
+      <tracker shortcut="/simulations/T1-BD_hiC/paddock/tracker" />
     </area>
   </simulation>
-  <simulation name="T3-BD" shortcut="/simulations/T2-BD">
-    <metfile name="met" shortcut="/simulations/T2-BD/met" />
-    <clock shortcut="/simulations/T2-BD/clock" />
-    <summaryfile shortcut="/simulations/T2-BD/summaryfile" />
-    <area name="paddock" shortcut="/simulations/T2-BD/paddock">
-      <Soil name="BulgR" shortcut="/simulations/T2-BD/paddock/BulgR">
-        <Water shortcut="/simulations/T2-BD/paddock/BulgR/Water" />
-        <SoilWater shortcut="/simulations/T2-BD/paddock/BulgR/SoilWater" />
-        <SoilOrganicMatter shortcut="/simulations/T2-BD/paddock/BulgR/SoilOrganicMatter" />
-        <Analysis shortcut="/simulations/T2-BD/paddock/BulgR/Analysis" />
-        <InitialWater shortcut="/simulations/T2-BD/paddock/BulgR/InitialWater" />
+  <simulation name="T3-BD_hiC" shortcut="/simulations/T2-BD_hiC">
+    <metfile name="met" shortcut="/simulations/T2-BD_hiC/met" />
+    <clock shortcut="/simulations/T2-BD_hiC/clock" />
+    <summaryfile shortcut="/simulations/T2-BD_hiC/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T2-BD_hiC/paddock">
+      <Soil name="BulgR" shortcut="/simulations/T2-BD_hiC/paddock/BulgR">
+        <Water shortcut="/simulations/T2-BD_hiC/paddock/BulgR/Water" />
+        <SoilWater shortcut="/simulations/T2-BD_hiC/paddock/BulgR/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T2-BD_hiC/paddock/BulgR/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T2-BD_hiC/paddock/BulgR/Analysis" />
+        <InitialWater shortcut="/simulations/T2-BD_hiC/paddock/BulgR/InitialWater" />
         <Sample name="Initial nitrogen">
           <Thickness>
             <double>100</double>
@@ -983,14 +994,14 @@ endif</text>
           <PHUnits>Water</PHUnits>
         </Sample>
       </Soil>
-      <erosion name="Erosion" shortcut="/simulations/T2-BD/paddock/Erosion" />
-      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2-BD/paddock/SurfaceOrganicMatter" />
-      <fertiliser shortcut="/simulations/T2-BD/paddock/fertiliser" />
-      <sugar shortcut="/simulations/T2-BD/paddock/sugar" />
-      <folder name="Manager folder" shortcut="/simulations/T2-BD/paddock/Manager folder">
+      <erosion name="Erosion" shortcut="/simulations/T2-BD_hiC/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2-BD_hiC/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T2-BD_hiC/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T2-BD_hiC/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder">
         <operations name="Operations Schedule">
           <operation condition="start_of_day">
-            <date>21/06/2014</date>
+            <date>21/6/2014</date>
             <action>!'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm) !Bianca commented out</action>
           </operation>
           <operation condition="start_of_day">
@@ -1048,42 +1059,42 @@ endif</text>
             </action>
           </operation>
         </operations>
-        <manager name="wet based lodging" shortcut="/simulations/T2-BD/paddock/Manager folder/wet based lodging" />
-        <manager name="Lodging" shortcut="/simulations/T2-BD/paddock/Manager folder/Lodging" />
-        <manager name="NinRunoff" shortcut="/simulations/T2-BD/paddock/Manager folder/NinRunoff" />
+        <manager name="wet based lodging" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/NinRunoff" />
       </folder>
-      <outputfile name="harvest" shortcut="/simulations/T2-BD/paddock/harvest">
-        <filename output="yes">T3-BD harvest.out</filename>
-        <title>T3-BD harvest</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/harvest/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/harvest/Reporting Frequency" />
+      <outputfile name="harvest" shortcut="/simulations/T2-BD_hiC/paddock/harvest">
+        <filename output="yes">T3-BD_hiC harvest.out</filename>
+        <title>T3-BD_hiC harvest</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/harvest/Reporting Frequency" />
       </outputfile>
-      <outputfile name="daily" shortcut="/simulations/T2-BD/paddock/daily">
-        <filename output="yes">T3-BD daily.out</filename>
-        <title>T3-BD daily</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/daily/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/daily/Reporting Frequency" />
+      <outputfile name="daily" shortcut="/simulations/T2-BD_hiC/paddock/daily">
+        <filename output="yes">T3-BD_hiC daily.out</filename>
+        <title>T3-BD_hiC daily</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/daily/Reporting Frequency" />
       </outputfile>
-      <outputfile name="layered" shortcut="/simulations/T2-BD/paddock/layered">
-        <filename output="yes">T3-BD layered.out</filename>
-        <title>T3-BD layered</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/layered/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/layered/Reporting Frequency" />
+      <outputfile name="layered" shortcut="/simulations/T2-BD_hiC/paddock/layered">
+        <filename output="yes">T3-BD_hiC layered.out</filename>
+        <title>T3-BD_hiC layered</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/layered/Reporting Frequency" />
       </outputfile>
-      <tracker shortcut="/simulations/T2-BD/paddock/tracker" />
+      <tracker shortcut="/simulations/T2-BD_hiC/paddock/tracker" />
     </area>
   </simulation>
-  <simulation name="T4-BD" shortcut="/simulations/T2-BD">
-    <metfile name="met" shortcut="/simulations/T2-BD/met" />
-    <clock shortcut="/simulations/T2-BD/clock" />
-    <summaryfile shortcut="/simulations/T2-BD/summaryfile" />
-    <area name="paddock" shortcut="/simulations/T2-BD/paddock">
-      <Soil name="BulgR" shortcut="/simulations/T2-BD/paddock/BulgR">
-        <Water shortcut="/simulations/T2-BD/paddock/BulgR/Water" />
-        <SoilWater shortcut="/simulations/T2-BD/paddock/BulgR/SoilWater" />
-        <SoilOrganicMatter shortcut="/simulations/T2-BD/paddock/BulgR/SoilOrganicMatter" />
-        <Analysis shortcut="/simulations/T2-BD/paddock/BulgR/Analysis" />
-        <InitialWater shortcut="/simulations/T2-BD/paddock/BulgR/InitialWater" />
+  <simulation name="T4-BD_hiC" shortcut="/simulations/T2-BD_hiC">
+    <metfile name="met" shortcut="/simulations/T2-BD_hiC/met" />
+    <clock shortcut="/simulations/T2-BD_hiC/clock" />
+    <summaryfile shortcut="/simulations/T2-BD_hiC/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T2-BD_hiC/paddock">
+      <Soil name="BulgR" shortcut="/simulations/T2-BD_hiC/paddock/BulgR">
+        <Water shortcut="/simulations/T2-BD_hiC/paddock/BulgR/Water" />
+        <SoilWater shortcut="/simulations/T2-BD_hiC/paddock/BulgR/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T2-BD_hiC/paddock/BulgR/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T2-BD_hiC/paddock/BulgR/Analysis" />
+        <InitialWater shortcut="/simulations/T2-BD_hiC/paddock/BulgR/InitialWater" />
         <Sample name="Initial nitrogen">
           <Thickness>
             <double>100</double>
@@ -1132,14 +1143,14 @@ endif</text>
           <PHUnits>Water</PHUnits>
         </Sample>
       </Soil>
-      <erosion name="Erosion" shortcut="/simulations/T2-BD/paddock/Erosion" />
-      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2-BD/paddock/SurfaceOrganicMatter" />
-      <fertiliser shortcut="/simulations/T2-BD/paddock/fertiliser" />
-      <sugar shortcut="/simulations/T2-BD/paddock/sugar" />
-      <folder name="Manager folder" shortcut="/simulations/T2-BD/paddock/Manager folder">
+      <erosion name="Erosion" shortcut="/simulations/T2-BD_hiC/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2-BD_hiC/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T2-BD_hiC/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T2-BD_hiC/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder">
         <operations name="Operations Schedule">
           <operation condition="start_of_day">
-            <date>21/06/2014</date>
+            <date>21/6/2014</date>
             <action>!'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm) !Bianca commented out</action>
           </operation>
           <operation condition="start_of_day">
@@ -1197,42 +1208,42 @@ endif</text>
             </action>
           </operation>
         </operations>
-        <manager name="wet based lodging" shortcut="/simulations/T2-BD/paddock/Manager folder/wet based lodging" />
-        <manager name="Lodging" shortcut="/simulations/T2-BD/paddock/Manager folder/Lodging" />
-        <manager name="NinRunoff" shortcut="/simulations/T2-BD/paddock/Manager folder/NinRunoff" />
+        <manager name="wet based lodging" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/NinRunoff" />
       </folder>
-      <outputfile name="harvest" shortcut="/simulations/T2-BD/paddock/harvest">
-        <filename output="yes">T4-BD harvest.out</filename>
-        <title>T4-BD harvest</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/harvest/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/harvest/Reporting Frequency" />
+      <outputfile name="harvest" shortcut="/simulations/T2-BD_hiC/paddock/harvest">
+        <filename output="yes">T4-BD_hiC harvest.out</filename>
+        <title>T4-BD_hiC harvest</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/harvest/Reporting Frequency" />
       </outputfile>
-      <outputfile name="daily" shortcut="/simulations/T2-BD/paddock/daily">
-        <filename output="yes">T4-BD daily.out</filename>
-        <title>T4-BD daily</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/daily/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/daily/Reporting Frequency" />
+      <outputfile name="daily" shortcut="/simulations/T2-BD_hiC/paddock/daily">
+        <filename output="yes">T4-BD_hiC daily.out</filename>
+        <title>T4-BD_hiC daily</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/daily/Reporting Frequency" />
       </outputfile>
-      <outputfile name="layered" shortcut="/simulations/T2-BD/paddock/layered">
-        <filename output="yes">T4-BD layered.out</filename>
-        <title>T4-BD layered</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/layered/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/layered/Reporting Frequency" />
+      <outputfile name="layered" shortcut="/simulations/T2-BD_hiC/paddock/layered">
+        <filename output="yes">T4-BD_hiC layered.out</filename>
+        <title>T4-BD_hiC layered</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/layered/Reporting Frequency" />
       </outputfile>
-      <tracker shortcut="/simulations/T2-BD/paddock/tracker" />
+      <tracker shortcut="/simulations/T2-BD_hiC/paddock/tracker" />
     </area>
   </simulation>
-  <simulation name="T5-BD" shortcut="/simulations/T2-BD">
-    <metfile name="met" shortcut="/simulations/T2-BD/met" />
-    <clock shortcut="/simulations/T2-BD/clock" />
-    <summaryfile shortcut="/simulations/T2-BD/summaryfile" />
-    <area name="paddock" shortcut="/simulations/T2-BD/paddock">
-      <Soil name="BulgR" shortcut="/simulations/T2-BD/paddock/BulgR">
-        <Water shortcut="/simulations/T2-BD/paddock/BulgR/Water" />
-        <SoilWater shortcut="/simulations/T2-BD/paddock/BulgR/SoilWater" />
-        <SoilOrganicMatter shortcut="/simulations/T2-BD/paddock/BulgR/SoilOrganicMatter" />
-        <Analysis shortcut="/simulations/T2-BD/paddock/BulgR/Analysis" />
-        <InitialWater shortcut="/simulations/T2-BD/paddock/BulgR/InitialWater" />
+  <simulation name="T5-BD_hiC" shortcut="/simulations/T2-BD_hiC">
+    <metfile name="met" shortcut="/simulations/T2-BD_hiC/met" />
+    <clock shortcut="/simulations/T2-BD_hiC/clock" />
+    <summaryfile shortcut="/simulations/T2-BD_hiC/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T2-BD_hiC/paddock">
+      <Soil name="BulgR" shortcut="/simulations/T2-BD_hiC/paddock/BulgR">
+        <Water shortcut="/simulations/T2-BD_hiC/paddock/BulgR/Water" />
+        <SoilWater shortcut="/simulations/T2-BD_hiC/paddock/BulgR/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T2-BD_hiC/paddock/BulgR/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T2-BD_hiC/paddock/BulgR/Analysis" />
+        <InitialWater shortcut="/simulations/T2-BD_hiC/paddock/BulgR/InitialWater" />
         <Sample name="Initial nitrogen">
           <Thickness>
             <double>100</double>
@@ -1281,14 +1292,14 @@ endif</text>
           <PHUnits>Water</PHUnits>
         </Sample>
       </Soil>
-      <erosion name="Erosion" shortcut="/simulations/T2-BD/paddock/Erosion" />
-      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2-BD/paddock/SurfaceOrganicMatter" />
-      <fertiliser shortcut="/simulations/T2-BD/paddock/fertiliser" />
-      <sugar shortcut="/simulations/T2-BD/paddock/sugar" />
-      <folder name="Manager folder" shortcut="/simulations/T2-BD/paddock/Manager folder">
+      <erosion name="Erosion" shortcut="/simulations/T2-BD_hiC/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2-BD_hiC/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T2-BD_hiC/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T2-BD_hiC/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder">
         <operations name="Operations Schedule">
           <operation condition="start_of_day">
-            <date>21/06/2014</date>
+            <date>21/6/2014</date>
             <action>!'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm) !Bianca commented out</action>
           </operation>
           <operation condition="start_of_day">
@@ -1346,29 +1357,29 @@ endif</text>
             </action>
           </operation>
         </operations>
-        <manager name="wet based lodging" shortcut="/simulations/T2-BD/paddock/Manager folder/wet based lodging" />
-        <manager name="Lodging" shortcut="/simulations/T2-BD/paddock/Manager folder/Lodging" />
-        <manager name="NinRunoff" shortcut="/simulations/T2-BD/paddock/Manager folder/NinRunoff" />
+        <manager name="wet based lodging" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T2-BD_hiC/paddock/Manager folder/NinRunoff" />
       </folder>
-      <outputfile name="harvest" shortcut="/simulations/T2-BD/paddock/harvest">
-        <filename output="yes">T5-BD harvest.out</filename>
-        <title>T5-BD harvest</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/harvest/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/harvest/Reporting Frequency" />
+      <outputfile name="harvest" shortcut="/simulations/T2-BD_hiC/paddock/harvest">
+        <filename output="yes">T5-BD_hiC harvest.out</filename>
+        <title>T5-BD_hiC harvest</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/harvest/Reporting Frequency" />
       </outputfile>
-      <outputfile name="daily" shortcut="/simulations/T2-BD/paddock/daily">
-        <filename output="yes">T5-BD daily.out</filename>
-        <title>T5-BD daily</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/daily/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/daily/Reporting Frequency" />
+      <outputfile name="daily" shortcut="/simulations/T2-BD_hiC/paddock/daily">
+        <filename output="yes">T5-BD_hiC daily.out</filename>
+        <title>T5-BD_hiC daily</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/daily/Reporting Frequency" />
       </outputfile>
-      <outputfile name="layered" shortcut="/simulations/T2-BD/paddock/layered">
-        <filename output="yes">T5-BD layered.out</filename>
-        <title>T5-BD layered</title>
-        <variables name="Variables" shortcut="/simulations/T2-BD/paddock/layered/Variables" />
-        <events name="Reporting Frequency" shortcut="/simulations/T2-BD/paddock/layered/Reporting Frequency" />
+      <outputfile name="layered" shortcut="/simulations/T2-BD_hiC/paddock/layered">
+        <filename output="yes">T5-BD_hiC layered.out</filename>
+        <title>T5-BD_hiC layered</title>
+        <variables name="Variables" shortcut="/simulations/T2-BD_hiC/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2-BD_hiC/paddock/layered/Reporting Frequency" />
       </outputfile>
-      <tracker shortcut="/simulations/T2-BD/paddock/tracker" />
+      <tracker shortcut="/simulations/T2-BD_hiC/paddock/tracker" />
     </area>
   </simulation>
   <GraphReport>

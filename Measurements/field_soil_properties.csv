@@ -1,0 +1,70 @@
+Site,layer,depth_m,pH,EC_dS_m,texture,colour
+1,1,0.1,5,0.089,silty clay loam,black
+1,2,0.3,5.2,0.017,silty light clay,grey
+1,3,0.6,4.9,0.011,silty light clay,grey
+1,4,0.9,4.9,0.008,light medium clay,grey
+1,5,1.2,5,0.012,light medium clay,grey
+1,6,1.5,5,0.01,medium clay,yellow-brown
+1,7,1.7,4.8,0.016,medium clay,yellow-brown
+2,1,0.1,5.1,0.023,silty clay loam,black
+2,2,0.3,5,0.017,silty clay loam,black
+2,3,0.6,5.2,0.01,light medium clay,grey
+2,4,0.9,4.2,0.006,light medium clay,grey
+2,5,1.2,5.2,0.006,light medium clay,grey
+2,6,1.5,5.1,0.004,medium clay,yellow
+3,1,0.1,5,0.124,silty clay loam,black
+3,2,0.3,5.4,0.024,silty clay loam,black
+3,3,0.6,4.7,0.0015,silty light clay,grey
+3,4,0.9,4.7,0.014,silty light clay,grey
+3,5,1.2,4.7,0.014,light medium clay,grey
+3,6,1.5,4.6,0.018,medium clay,yellow-grey
+4,1,0.3,5.3,0.031,silty clay loam,black
+4,2,0.9,5,0.017,light clay,grey
+4,3,1.2,4.8,0.018,medium clay,yellow
+5,1,0.3,5.2,0.026,silty clay loam,black
+5,2,0.9,5,0.016,light medium clay,grey
+5,3,1.2,5,0.016,medium heavy,yellow-brown
+6,1,0.3,5.4,0.019,silty clay loam,black
+6,2,0.9,4.8,0.014,light medium clay,grey
+6,3,1.2,4.5,0.015,medium clay,yellow
+7,1,0.1,5.2,0.022,silty light clay,black
+7,2,0.3,5.1,0.017,silty light clay,black
+7,3,0.6,4.6,0.015,light clay,grey
+7,4,0.9,4.5,0.014,light clay,grey
+7,5,1.2,4.5,0.019,medium clay,yellow-brown
+7,6,1.5,4.3,0.023,medium clay,yellow-brown
+8,1,0.1,4.2,0.049,silty light clay,black
+8,2,0.3,4.6,0.014,silty light clay,black
+8,3,0.6,4.4,0.018,light medium clay,grey
+8,4,0.9,4.3,0.025,light medium clay,grey
+8,5,1.2,4.3,0.025,medium clay,yellow-brown
+8,6,1.5,3.7,0.025,medium clay,yellow-brown
+9,1,0.1,5.2,0.022,silty clay loam,black
+9,2,0.3,4.6,0.017,silty clay loam,black
+9,3,0.6,4.4,0.018,light clay,brown
+9,4,0.9,4.7,0.025,light clay,grey
+9,5,1.2,4.4,0.016,medium clay,yellow-grey
+9,6,1.5,4.5,0.016,medium clay,yellow-grey
+10,1,0.1,5.4,0.018,light clay,black
+10,2,0.3,4.9,0.012,light clay,black
+10,3,0.6,4.9,0.025,clay loam,black
+10,4,0.9,4.8,0.013,clay loam,grey
+10,5,1.2,4.4,0.014,light-medium clay,grey
+10,6,1.5,4.2,0.025,light-medium clay,yellow-brown
+11,1,0.1,4.6,0.032,silty light clay,black
+11,2,0.3,4.7,0.015,silty light clay,black
+11,3,0.6,4.3,0.016,light-medium clay,grey
+11,4,0.9,4.3,0.019,light-medium clay,grey
+11,5,1.2,4.2,0.015,medium clay,grey
+11,6,1.5,4.3,0.018,medium-heavy clay,yellow
+12,1,0.1,4.2,0.025,silty clay loam,black
+12,2,0.3,4.6,0.018,silty clay loam,grey
+12,3,0.6,4.4,0.023,light clay,olive-grey
+12,4,0.9,4.5,0.015,medium clay fine sandy,grey
+12,5,1.2,4.7,0.017,medium clay,grey
+13,1,0.1,5.1,0.024,silty light clay,black
+13,2,0.3,5,0.02,light clay,black
+13,3,0.6,4.7,0.019,silty light clay,grey
+13,4,0.9,4.7,0.022,light medium clay,blue-grey
+13,5,1.2,4.7,0.017,medium clay,blue-grey
+13,6,1.5,4.8,0.004,medium clay,yellow-brown

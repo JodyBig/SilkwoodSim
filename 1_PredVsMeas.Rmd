@@ -77,7 +77,7 @@ kable(treatDesc)
 - 2014-10-22: N fertiliser top-dressed and lightly cultivated (3month later; check date is not 2014-10-02)
 - 2015-11-11: harvest (gctb); soil sampling to 90cm	
 - 2015-11-25: N fertiliser applied via stool-split
-- 2016-??-??: ratoon crop harvest
+- 2016-11-25: ratoon crop harvest
 - 2016-11-28: soil sampling to 90cm (after harvest)
 	
 - T1 plant crop impacted by lodging and subsequent suckering (image taken 2015-03-08)
@@ -100,6 +100,7 @@ kable(treatDesc)
 - high propotion of runoff
 - saturated for long periods of time
 - water table remaining within 60cm for days to weeks after substantial rainfall
+- pH 5.1 and OC 5.7 % in top 10 cm
 	
 ## Climate:
 
@@ -108,10 +109,12 @@ kable(treatDesc)
     + Plant crop = 1718 mm (average 3075mm)
     + Ratoon crop = 2498 mm
     
+## Bianca    
+bare fallow period 2013-14 wet season
 
 ```{r}
 ## Read in apsim output files ----
-apsimFiles <- list.files(path=".", pattern="*harvest.out", recursive=TRUE, full.names=TRUE)
+apsimFiles <- list.files(path=".", pattern="*BD harvest.out", recursive=TRUE, full.names=TRUE)
 
 readIn <- function(fileName){
   temp <- read.table(fileName, header=TRUE, skip=2, nrows=6)

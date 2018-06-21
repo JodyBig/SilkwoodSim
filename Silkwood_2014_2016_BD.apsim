@@ -1,0 +1,1206 @@
+<folder version="37" creator="Apsim 7.9-r4044" name="simulations">
+  <PlugIns>
+    <PlugIn enabled="yes">%apsim%\UserInterface\ApsimUIPlugIn.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\UserInterface\SoilTypes.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\UserInterface\Graph.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\UserInterface\Ausfarm.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\UserInterface\DevelopersPlugIn.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Accum.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\AgPasture.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Bambatsi.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Barley.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Br.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Bore.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Broccoli.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\ButterflyPea.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Canola.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Canopy.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Centro.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Channel.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Chickpea.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Cl.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Climatechange.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Clock.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Cowpea.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\CropUI.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Dam.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\DCD.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\EGrandis.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\EMelliodora.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Eo.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\EPopulnea.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Erosion.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Events.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Fababean.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Factorial.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Factor.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\FactorComplex.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\FrenchBean.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Fertiliser.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Fieldpea.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Gcm_data.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Grasp.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Graz.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Growth.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Horsegram.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Ini.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\InitWater.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Input.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Irrigation.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\KWTest.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Lablab.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Lettuce.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Log.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Lucerne.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Lupin.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Maize.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\MaizeZ.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Manager.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Map.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Memo.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\MetFile.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\MicroMet.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Millet.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Millet1.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Millet2.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Millet3.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Millet4.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Millet5.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Mucuna.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Mungbean.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Navybean.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Oats.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Ocean_data.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Operations.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Orobanche.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Oryza.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Oryza2.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\OutputFile.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Ozcot.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Patchinput.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Peanut.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Pigeonpea.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Pond.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Potato.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\RotPlot.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\RugPlotUI.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Root.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Rule.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Script.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Seedling.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SiloInput.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Slurp.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Soi.xml</PlugIn>
+    <PlugIn enabled="no">%apsim%\Model\Soil.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SoilNui.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SoilTemp.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Sorghum.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SorghumConstants.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SorghumGenotype.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Soybean.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Stylo.xml</PlugIn>
+    <PlugIn enabled="no">%apsim%\Model\Sugar.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Summaryfile.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Sunflower.xml</PlugIn>
+    <PlugIn enabled="no">%apsim%\Model\SurfaceOM.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SweetCorn.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SweetSorghum.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SWIM2.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SWIM2ui.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Sysbal.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\SysBal2.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Tcllink.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Tclmanager.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Tclui.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Tracker.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Tree.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Variables.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Venlink.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\vine.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\WaterSupply.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Weed.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\Wheat.xml</PlugIn>
+    <PlugIn enabled="yes">%apsim%\Model\YPCalc.xml</PlugIn>
+    <PlugIn enabled="yes">Soil_V79.xml</PlugIn>
+    <PlugIn enabled="yes">Sugar_V79.xml</PlugIn>
+    <PlugIn enabled="yes">SurfaceOM_V79.xml</PlugIn>
+  </PlugIns>
+  <simulation name="T1">
+    <metfile name="met">
+      <filename name="filename" input="yes">bingalbay.met</filename>
+    </metfile>
+    <clock>
+      <start_date type="date" description="Enter the start date of the simulation">01/10/2013</start_date>
+      <end_date type="date" description="Enter the end date of the simulation">30/11/2016</end_date>
+    </clock>
+    <summaryfile />
+    <area name="paddock">
+      <Soil name="BulgR">
+        <RecordNumber>0</RecordNumber>
+        <SoilType>Hydrosol</SoilType>
+        <Site>Silkwood</Site>
+        <NearestTown>Silkwood</NearestTown>
+        <Region>South Johnstone sub-basin</Region>
+        <State>Queensland</State>
+        <Country>Australia</Country>
+        <Latitude>-17.745756</Latitude>
+        <Longitude>146.049656</Longitude>
+        <YearOfSampling>0</YearOfSampling>
+        <Comments>Based on work conducted in the Climate Forecasting project as of 20180124</Comments>
+        <Water>
+          <Thickness>
+            <double>100</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <BD>
+            <double>1.37</double>
+            <double>1.32</double>
+            <double>1.23</double>
+            <double>1.26</double>
+            <double>1.19</double>
+            <double>1.12</double>
+            <double>1.14</double>
+            <double>1.14</double>
+          </BD>
+          <AirDry>
+            <double>0.05</double>
+            <double>0.05</double>
+            <double>0.05</double>
+            <double>0.05</double>
+            <double>0.05</double>
+            <double>0.05</double>
+            <double>0.05</double>
+            <double>0.05</double>
+          </AirDry>
+          <LL15>
+            <double>0.26</double>
+            <double>0.27</double>
+            <double>0.28</double>
+            <double>0.27</double>
+            <double>0.29</double>
+            <double>0.31</double>
+            <double>0.3</double>
+            <double>0.3</double>
+          </LL15>
+          <DUL>
+            <double>0.34</double>
+            <double>0.34</double>
+            <double>0.36</double>
+            <double>0.37</double>
+            <double>0.4</double>
+            <double>0.43</double>
+            <double>0.42</double>
+            <double>0.42</double>
+          </DUL>
+          <SAT>
+            <double>0.459</double>
+            <double>0.477</double>
+            <double>0.51</double>
+            <double>0.5</double>
+            <double>0.53</double>
+            <double>0.55</double>
+            <double>0.54</double>
+            <double>0.54</double>
+          </SAT>
+          <KS>
+            <double>200</double>
+            <double>200</double>
+            <double>200</double>
+            <double>250</double>
+            <double>200</double>
+            <double>150</double>
+            <double>200</double>
+            <double>100</double>
+          </KS>
+          <SoilCrop name="sugar">
+            <Thickness>
+              <double>100</double>
+              <double>100</double>
+              <double>100</double>
+              <double>150</double>
+              <double>150</double>
+              <double>300</double>
+              <double>300</double>
+              <double>300</double>
+            </Thickness>
+            <LL>
+              <double>0.26</double>
+              <double>0.27</double>
+              <double>0.28</double>
+              <double>0.27</double>
+              <double>0.29</double>
+              <double>0.31</double>
+              <double>0.3</double>
+              <double>0.3</double>
+            </LL>
+            <KL>
+              <double>0.1</double>
+              <double>0.1</double>
+              <double>0.1</double>
+              <double>0.08</double>
+              <double>0.08</double>
+              <double>0.06</double>
+              <double>0.04</double>
+              <double>0.01</double>
+            </KL>
+            <XF>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>1</double>
+              <double>0.5</double>
+              <double>0</double>
+            </XF>
+          </SoilCrop>
+        </Water>
+        <SoilWater>
+          <SummerCona>3.5</SummerCona>
+          <SummerU>4</SummerU>
+          <SummerDate>1-Nov</SummerDate>
+          <WinterCona>3.5</WinterCona>
+          <WinterU>4</WinterU>
+          <WinterDate>1-Apr</WinterDate>
+          <DiffusConst>88</DiffusConst>
+          <DiffusSlope>35.4</DiffusSlope>
+          <Salb>0.1</Salb>
+          <CN2Bare>73</CN2Bare>
+          <CNRed>20</CNRed>
+          <CNCov>0.8</CNCov>
+          <Slope>NaN</Slope>
+          <DischargeWidth>NaN</DischargeWidth>
+          <CatchmentArea>NaN</CatchmentArea>
+          <MaxPond>NaN</MaxPond>
+          <Thickness>
+            <double>100</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <SWCON>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0.4</double>
+            <double>0.01</double>
+          </SWCON>
+        </SoilWater>
+        <SoilOrganicMatter>
+          <RootCN>70</RootCN>
+          <RootWt>3353</RootWt>
+          <SoilCN>15</SoilCN>
+          <EnrACoeff>7.4</EnrACoeff>
+          <EnrBCoeff>0.2</EnrBCoeff>
+          <Thickness>
+            <double>100</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <OC>
+            <double>2.24</double>
+            <double>0.721</double>
+            <double>0.966</double>
+            <double>0.578</double>
+            <double>0.518</double>
+            <double>0.517</double>
+            <double>0.477</double>
+            <double>0.453</double>
+          </OC>
+          <FBiom>
+            <double>0.111</double>
+            <double>0.047</double>
+            <double>0.054</double>
+            <double>0.064</double>
+            <double>0.096</double>
+            <double>0.094</double>
+            <double>0.091</double>
+            <double>0.088</double>
+          </FBiom>
+          <FInert>
+            <double>0.241</double>
+            <double>0.38</double>
+            <double>0.596</double>
+            <double>0.824</double>
+            <double>0.938</double>
+            <double>0.99</double>
+            <double>0.99</double>
+            <double>0.99</double>
+          </FInert>
+          <OCUnits>Total</OCUnits>
+        </SoilOrganicMatter>
+        <Analysis>
+          <Thickness>
+            <double>100</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <Texture>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </Texture>
+          <MunsellColour>
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+            <string />
+          </MunsellColour>
+          <PH>
+            <double>4.9</double>
+            <double>5</double>
+            <double>5</double>
+            <double>4.9</double>
+            <double>5</double>
+            <double>5</double>
+            <double>5.1</double>
+            <double>4.9</double>
+          </PH>
+          <PHUnits>Water</PHUnits>
+          <BoronUnits>HotWater</BoronUnits>
+        </Analysis>
+        <InitialWater>
+          <FractionFull>0.75</FractionFull>
+          <DepthWetSoil>NaN</DepthWetSoil>
+          <PercentMethod>EvenlyDistributed</PercentMethod>
+          <RelativeTo>ll15</RelativeTo>
+        </InitialWater>
+        <Sample name="Initial nitrogen">
+          <Thickness>
+            <double>100</double>
+            <double>100</double>
+            <double>100</double>
+            <double>150</double>
+            <double>150</double>
+            <double>300</double>
+            <double>300</double>
+            <double>300</double>
+          </Thickness>
+          <NO3>
+            <double>0.01</double>
+            <double>0.01</double>
+            <double>0.01</double>
+            <double>0</double>
+            <double>0</double>
+            <double>0</double>
+            <double>0</double>
+            <double>0</double>
+          </NO3>
+          <NH4>
+            <double>0.03</double>
+            <double>0.04</double>
+            <double>0.04</double>
+            <double>0</double>
+            <double>0</double>
+            <double>0.01</double>
+            <double>0.01</double>
+            <double>0</double>
+          </NH4>
+          <SW>
+            <double>0.348</double>
+            <double>0.367</double>
+            <double>0.39</double>
+            <double>0.374</double>
+            <double>0.386</double>
+            <double>0.406</double>
+            <double>0.391</double>
+            <double>0.406</double>
+          </SW>
+          <NO3Units>kgha</NO3Units>
+          <NH4Units>kgha</NH4Units>
+          <SWUnits>Volumetric</SWUnits>
+          <OCUnits>Total</OCUnits>
+          <PHUnits>Water</PHUnits>
+        </Sample>
+      </Soil>
+      <erosion name="Erosion">
+        <model type="text" description="Model Name">freebairn</model>
+        <slope type="text" description="Slope of plot in percent (%)">0.2</slope>
+        <slope_length type="text" description="Length of plot (m)">100</slope_length>
+        <k_factor type="text" description="Soil erodibility factor (t/ha/EI 30 )">0.38</k_factor>
+        <p_factor type="text" description="Supporting practise factor (unitless)">1.0</p_factor>
+        <bed_depth type="text" description="Depth to bedrock (mm)">1900</bed_depth>
+        <profile_reduction type="list" listvalues="off,on" description="Profile Reduction">off</profile_reduction>
+        <profile_layer_merge type="text" description="Fraction of original size in which the lowest layer is merged into the layer above (0-1)">0.05</profile_layer_merge>
+        <minimum_depth type="text" description="If the profile erodes to this depth, the simulation is stopped (mm)">100.0</minimum_depth>
+      </erosion>
+      <surfaceom name="SurfaceOrganicMatter">
+        <PoolName type="text" description="Organic Matter pool name">soybean</PoolName>
+        <type type="list" listvalues="bambatsi,barley,base_type,broccoli,camaldulensis,canola,centro,chickpea,chikenmanure_base,cm,cmA,cmB,constants,cotton,cowpea,danthonia,fababean,fieldpea,fym,gbean,globulus,goatmanure,grandis,grass,horsegram,inert,lablab,lentil,lucerne,lupin,maize,manB,manure,medic,millet,mucuna,nativepasture,navybean,oats,orobanche,peanut,pigeonpea,potato,rice,sorghum,soybean,stylo,sugar,sunflower,sweetcorn,sweetsorghum,tillage,tithonia,vetch,weed,WF_Millet,wheat" description="Organic Matter type">soybean</type>
+        <mass type="text" description="Initial surface residue (kg/ha)">2500</mass>
+        <cnr type="text" description="C:N ratio of initial residue">40.0</cnr>
+        <cpr type="text" description="C:P ratio of initial residue (optional)" />
+        <standing_fraction type="text" description="Fraction of residue standing">0.0</standing_fraction>
+      </surfaceom>
+      <fertiliser />
+      <sugar />
+      <folder name="Manager folder">
+        <operations name="Operations Schedule">
+          <operation condition="start_of_day">
+            <date>21/6/2014</date>
+            <action>'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>sugar sow plants = 10 (), cultivar = 'q117', sowing_depth = 150 (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>fertiliser apply amount = 35.5 (kg/ha), depth = 150 (mm), type = 'nh4_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/10/2014</date>
+            <action>fertiliser apply amount = 158.5 (kg/ha), depth = 50 (mm), type = 'urea_n' () !Bianca reduced N depth</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/11/2015</date>
+            <action>sugar harvest 'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm) !Bianca added trash blanket</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/11/2015</date>
+            <action>fertiliser apply amount = 190 (kg/ha), depth = 50 (mm), type = 'urea_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/11/2016</date>
+            <action>sugar harvest !Assumed based on soil sampling date !Bianca changed harvest date</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <manager name="wet based lodging" enabled="no">
+          <script>
+            <text>if sugar.DaysAfterSowing = 1 then
+      Lodgeflag=0 
+endif
+
+! workout severity of rain storm for lodging
+if (rain=0) and (storm=1) then
+  drydays=drydays+1
+endif
+
+!if (drydays&gt;5) then 
+!  report do_output
+  storm=0  
+  drydays=0
+  stormrain=0.0
+endif
+
+if (rain&gt;20) then
+  storm=1
+  drydays=0
+endif
+
+if (storm=1) then
+  stormrain=stormrain+rain
+endif
+
+if (storm=0) then
+  fasw35 = (sugar.esw(1)+ sugar.esw(2)+sugar.esw(3)) / (dul_dep(1)+dul_dep(2)+dul_dep(3)-ll15_dep(1)-ll15_dep(2)-ll15_dep(3))
+  !fasw25 = (sugar.esw(1)+ sugar.esw(2)) / (dul_dep(1)+dul_dep(2)-ll15_dep(1)-ll15_dep(2))
+  !fasw40 = (sw(1)+sw(2)-ll(1)-ll(2))/(dul(1)+dul(2)-ll(1)-ll(2))
+endif
+
+if (stormrain &gt; 300) and (LodgeFlag = 0) then
+         sugar lodge
+         chk_lodge = chk_lodge + 1
+         LodgeAge = sugar.DaysAfterSowing
+         LodgeDate = dd_mmm_yyyy
+         LodgeFlag = 1
+endif
+</text>
+            <event>start_of_day</event>
+          </script>
+        </manager>
+        <manager name="Lodging" enabled="no">
+          <script>
+            <text>LodgeFlag = 0</text>
+            <event>init</event>
+          </script>
+          <script>
+            <text>if rain &gt; 100 and sugar.cane_wt &gt; 1500 and LodgeFlag = 0 then
+   sugar lodge
+   LodgeFlag = 1
+endif
+
+if sugar.DaysAfterSowing = 1 then
+   LodgeFlag = 0
+endif</text>
+            <event>start_of_day</event>
+          </script>
+        </manager>
+        <manager name="NinRunoff">
+          <script>
+            <text>enr_a = 7.4
+enr_b = 0.2</text>
+            <event>init</event>
+          </script>
+          <script>
+            <text>!!!!!!!!!! This N Erosion section written by Jody Biggs !!!!!!!!!!!!!!!!!!!!!!
+!
+!calculations for nitrate lost through runoff using the erosion module
+conc_mgkg = (no3(1) / (1000 * bd(1) * dlayer(1) * 10)) *1000000
+!
+! calculate enrichment ratio
+
+!enr_b  = 0.2
+
+! calculating ratio based on enrichment coefficients
+if erosion.soil_loss &gt; 0 then
+   enrJB = enr_a * ((1000.0 * soil_loss) ^ (-1.0*enr_b))
+   NRunoff = (soil_loss * enrJB * conc_mgkg)/1000
+   if NRunoff &gt; no3(1) then
+      NRunoff = no3(1)
+      no3(1) = 0
+   else
+      no3(1) = no3(1) - NRunoff
+   endif
+else
+   enrJB = 1
+   NRunoff = 0
+endif</text>
+            <event>end_of_day</event>
+          </script>
+        </manager>
+      </folder>
+      <outputfile name="harvest">
+        <filename output="yes">T1 harvest.out</filename>
+        <title>T1 harvest</title>
+        <variables name="Variables">
+          <variable>dd/mm/yyyy as Date</variable>
+          <variable>biomass</variable>
+          <variable>cane_wt</variable>
+          <variable>ratoon_no</variable>
+          <variable>crop_status</variable>
+          <variable>sw_demand</variable>
+          <variable>esw</variable>
+          <variable>lai</variable>
+          <variable>nfact_photo</variable>
+          <variable>root_depth</variable>
+          <variable>fertiliser</variable>
+          <variable>tracker.sumDrain</variable>
+          <variable>tracker.sumRain</variable>
+          <variable>tracker.sumRunoff</variable>
+          <variable>tracker.sumEP</variable>
+          <variable>tracker.sumES</variable>
+          <variable>tracker.sumDenit</variable>
+          <variable>tracker.sumNinDD</variable>
+          <variable>biomass_n</variable>
+          <variable>no3()</variable>
+          <variable>nh4()</variable>
+          <variable>tracker.avgNstress</variable>
+          <variable>tracker.avgWaterstress</variable>
+          <variable>tracker.avgOXDEFstress</variable>
+          <variable>nit_tot()</variable>
+          <variable>sumNinRO</variable>
+          <variable>n_green(1) as root_N</variable>
+          <variable>n_green(2) as leaf_N</variable>
+          <variable>n_green(3) as stem_N</variable>
+          <variable>n_green(4) as cabb_N</variable>
+          <variable>n_green(5) as sucr_N</variable>
+          <variable>canefw</variable>
+        </variables>
+        <events name="Reporting Frequency">
+          <event>sowing</event>
+          <event>harvesting</event>
+        </events>
+      </outputfile>
+      <outputfile name="daily">
+        <filename output="yes">T1 daily.out</filename>
+        <title>T1 daily</title>
+        <variables name="Variables">
+          <variable>dd/mm/yyyy as Date</variable>
+          <variable>biomass</variable>
+          <variable>cane_wt</variable>
+          <variable>ratoon_no</variable>
+          <variable>crop_status</variable>
+          <variable>sw_demand</variable>
+          <variable>esw</variable>
+          <variable>lai</variable>
+          <variable>nfact_photo</variable>
+          <variable>root_depth</variable>
+          <variable>fertiliser</variable>
+          <variable>surfaceom_wt</variable>
+          <variable>no3()</variable>
+          <variable>nh4()</variable>
+          <variable>hum_n()</variable>
+          <variable>fom_n()</variable>
+          <variable>biom_n()</variable>
+          <variable>ep</variable>
+          <variable>es</variable>
+          <variable>dnit()</variable>
+          <variable>leach_no3</variable>
+          <variable>rain</variable>
+          <variable>sat_dep()</variable>
+          <variable>dul_dep()</variable>
+          <variable>ll15_dep()</variable>
+          <variable>sw_dep()</variable>
+          <variable>no3(1) as no3_0_20</variable>
+          <variable>no3(3) as no3_40_60</variable>
+          <variable>no3(5) as no3_80_100</variable>
+          <variable>nh4(1) as nh4_0_20</variable>
+          <variable>nh4(3) as nh4_40_60</variable>
+          <variable>nh4(5) as nh4_80_100</variable>
+          <variable>lodge_redn_photo</variable>
+          <variable>lodge_redn_sucrose</variable>
+          <variable>lodge_redn_green_leaf</variable>
+        </variables>
+        <events name="Reporting Frequency">
+          <event>post</event>
+        </events>
+        <Graph name="XY">
+          <Legend>
+            <CheckedTitles> lodge_redn_photo, T1 daily</CheckedTitles>
+            <CheckedTitles> rain, T1 daily</CheckedTitles>
+          </Legend>
+          <Plot>
+            <SeriesType>Solid line</SeriesType>
+            <PointType>Circle</PointType>
+            <colour>
+            </colour>
+            <X>Date</X>
+            <Y>lodge_redn_photo</Y>
+            <YRight>rain</YRight>
+            <GDApsimFileReader name="ApsimFileReader">
+              <FileName>T1 daily.out</FileName>
+              <FileName>T2 daily.out</FileName>
+              <FileName>T3 daily.out</FileName>
+              <FileName>T4 daily.out</FileName>
+              <FileName>T5 daily.out</FileName>
+            </GDApsimFileReader>
+          </Plot>
+        </Graph>
+      </outputfile>
+      <outputfile name="layered">
+        <filename output="yes">T1 layered.out</filename>
+        <title>T1 layered</title>
+        <variables name="Variables">
+          <variable>dd/mm/yyyy as Date</variable>
+          <variable>sw</variable>
+          <variable>no3</variable>
+          <variable>nh4</variable>
+          <variable>dul</variable>
+          <variable>ll15</variable>
+          <variable>sat</variable>
+        </variables>
+        <events name="Reporting Frequency">
+          <event>post</event>
+        </events>
+      </outputfile>
+      <tracker>
+        <variable>sum of drain on end_of_day from harvest.reported to now as sumDrain</variable>
+        <variable>sum of rain on end_of_day from harvest.reported to now as sumRain</variable>
+        <variable>sum of runoff on end_of_day from harvest.reported to now as sumRunoff</variable>
+        <variable>sum of sugar.ep on end_of_day from harvest.reported to now as sumEP</variable>
+        <variable>sum of es on end_of_day from harvest.reported to now as sumES</variable>
+        <variable>sum of dnit() on end_of_day from harvest.reported to now as sumDenit</variable>
+        <variable>sum of leach_no3 on end_of_day from harvest.reported to now as sumNinDD</variable>
+        <variable>average of nfact_photo on end_of_day from harvest.reported to now as avgNstress</variable>
+        <variable>average of swdef_photo on end_of_day from harvest.reported to now as avgWaterstress</variable>
+        <variable>average of oxdef_photo on end_of_day from harvest.reported to now as avgOXDEFstress</variable>
+        <variable>sum of Nrunoff on end_of_day from harvest.reported to now as sumNinRO</variable>
+      </tracker>
+    </area>
+  </simulation>
+  <simulation name="T2" shortcut="/simulations/T1">
+    <metfile name="met" shortcut="/simulations/T1/met" />
+    <clock shortcut="/simulations/T1/clock" />
+    <summaryfile shortcut="/simulations/T1/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T1/paddock">
+      <Soil name="Bulgun_NEW" shortcut="/simulations/T1/paddock/BulgR">
+        <Water shortcut="/simulations/T1/paddock/BulgR/Water" />
+        <SoilWater shortcut="/simulations/T1/paddock/BulgR/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T1/paddock/BulgR/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T1/paddock/BulgR/Analysis" />
+        <InitialWater shortcut="/simulations/T1/paddock/BulgR/InitialWater" />
+        <Sample name="Initial nitrogen" shortcut="/simulations/T1/paddock/BulgR/Initial nitrogen" />
+      </Soil>
+      <erosion name="Erosion" shortcut="/simulations/T1/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T1/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T1/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T1/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T1/paddock/Manager folder">
+        <operations name="Operations Schedule">
+          <operation condition="start_of_day">
+            <date>21/6/2014</date>
+            <action>'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>sugar sow plants = 10 (), cultivar = 'q117', sowing_depth = 150 (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>fertiliser apply amount = 35.5 (kg/ha), depth = 150 (mm), type = 'nh4_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/10/2014</date>
+            <action>fertiliser apply amount = 98.5 (kg/ha), depth = 150 (mm), type = 'urea_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/11/2015</date>
+            <action>sugar harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/11/2015</date>
+            <action>fertiliser apply amount = 158 (kg/ha), depth = 50 (mm), type = 'urea_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>28/11/2016</date>
+            <action>sugar harvest !Assumed based on soil sampling date</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <manager name="wet based lodging" shortcut="/simulations/T1/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T1/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T1/paddock/Manager folder/NinRunoff" />
+      </folder>
+      <outputfile name="harvest" shortcut="/simulations/T1/paddock/harvest">
+        <filename output="yes">T2 harvest.out</filename>
+        <title>T2 harvest</title>
+        <variables name="Variables" shortcut="/simulations/T1/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1/paddock/harvest/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="daily" shortcut="/simulations/T1/paddock/daily">
+        <filename output="yes">T2 daily.out</filename>
+        <title>T2 daily</title>
+        <variables name="Variables" shortcut="/simulations/T1/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1/paddock/daily/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="layered" shortcut="/simulations/T1/paddock/layered">
+        <filename output="yes">T2 layered.out</filename>
+        <title>T2 layered</title>
+        <variables name="Variables" shortcut="/simulations/T1/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T1/paddock/layered/Reporting Frequency" />
+      </outputfile>
+      <tracker shortcut="/simulations/T1/paddock/tracker" />
+    </area>
+  </simulation>
+  <simulation name="T3" shortcut="/simulations/T2">
+    <metfile name="met" shortcut="/simulations/T2/met" />
+    <clock shortcut="/simulations/T2/clock" />
+    <summaryfile shortcut="/simulations/T2/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T2/paddock">
+      <Soil name="Bulgun_NEW" shortcut="/simulations/T2/paddock/Bulgun_NEW">
+        <Water shortcut="/simulations/T2/paddock/Bulgun_NEW/Water" />
+        <SoilWater shortcut="/simulations/T2/paddock/Bulgun_NEW/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T2/paddock/Bulgun_NEW/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T2/paddock/Bulgun_NEW/Analysis" />
+        <InitialWater shortcut="/simulations/T2/paddock/Bulgun_NEW/InitialWater" />
+        <Sample name="Initial nitrogen" shortcut="/simulations/T2/paddock/Bulgun_NEW/Initial nitrogen" />
+      </Soil>
+      <erosion name="Erosion" shortcut="/simulations/T2/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T2/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T2/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T2/paddock/Manager folder">
+        <operations name="Operations Schedule">
+          <operation condition="start_of_day">
+            <date>21/6/2014</date>
+            <action>'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>sugar sow plants = 10 (), cultivar = 'q117', sowing_depth = 150 (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>fertiliser apply amount = 35.5 (kg/ha), depth = 150 (mm), type = 'nh4_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/10/2014</date>
+            <action>fertiliser apply amount = 58.5 (kg/ha), depth = 150 (mm), type = 'urea_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/11/2015</date>
+            <action>sugar harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/11/2015</date>
+            <action>fertiliser apply amount = 110 (kg/ha), depth = 50 (mm), type = 'urea_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>28/11/2016</date>
+            <action>sugar harvest !Assumed based on soil sampling date</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <manager name="wet based lodging" shortcut="/simulations/T2/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T2/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T2/paddock/Manager folder/NinRunoff" />
+      </folder>
+      <outputfile name="harvest" shortcut="/simulations/T2/paddock/harvest">
+        <filename output="yes">T3 harvest.out</filename>
+        <title>T3 harvest</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/harvest/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="daily" shortcut="/simulations/T2/paddock/daily">
+        <filename output="yes">T3 daily.out</filename>
+        <title>T3 daily</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/daily/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="layered" shortcut="/simulations/T2/paddock/layered">
+        <filename output="yes">T3 layered.out</filename>
+        <title>T3 layered</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/layered/Reporting Frequency" />
+      </outputfile>
+      <tracker shortcut="/simulations/T2/paddock/tracker" />
+    </area>
+  </simulation>
+  <simulation name="T4" shortcut="/simulations/T2">
+    <metfile name="met" shortcut="/simulations/T2/met" />
+    <clock shortcut="/simulations/T2/clock" />
+    <summaryfile shortcut="/simulations/T2/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T2/paddock">
+      <Soil name="Bulgun_NEW" shortcut="/simulations/T2/paddock/Bulgun_NEW">
+        <Water shortcut="/simulations/T2/paddock/Bulgun_NEW/Water" />
+        <SoilWater shortcut="/simulations/T2/paddock/Bulgun_NEW/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T2/paddock/Bulgun_NEW/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T2/paddock/Bulgun_NEW/Analysis" />
+        <InitialWater shortcut="/simulations/T2/paddock/Bulgun_NEW/InitialWater" />
+        <Sample name="Initial nitrogen" shortcut="/simulations/T2/paddock/Bulgun_NEW/Initial nitrogen" />
+      </Soil>
+      <erosion name="Erosion" shortcut="/simulations/T2/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T2/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T2/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T2/paddock/Manager folder">
+        <operations name="Operations Schedule">
+          <operation condition="start_of_day">
+            <date>21/6/2014</date>
+            <action>'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>sugar sow plants = 10 (), cultivar = 'q117', sowing_depth = 150 (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>fertiliser apply amount = 35.5 (kg/ha), depth = 150 (mm), type = 'nh4_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/10/2014</date>
+            <action>fertiliser apply amount = 58.5 (kg/ha), depth = 150 (mm), type = 'urea_n' () !This should be a blend of urea/crf</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/11/2015</date>
+            <action>sugar harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/11/2015</date>
+            <action>fertiliser apply amount = 112 (kg/ha), depth = 50 (mm), type = 'urea_n' () !This should be a blend of urea/crf</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>28/11/2016</date>
+            <action>sugar harvest !Assumed based on soil sampling date</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <manager name="wet based lodging" shortcut="/simulations/T2/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T2/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T2/paddock/Manager folder/NinRunoff" />
+      </folder>
+      <outputfile name="harvest" shortcut="/simulations/T2/paddock/harvest">
+        <filename output="yes">T4 harvest.out</filename>
+        <title>T4 harvest</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/harvest/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="daily" shortcut="/simulations/T2/paddock/daily">
+        <filename output="yes">T4 daily.out</filename>
+        <title>T4 daily</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/daily/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="layered" shortcut="/simulations/T2/paddock/layered">
+        <filename output="yes">T4 layered.out</filename>
+        <title>T4 layered</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/layered/Reporting Frequency" />
+      </outputfile>
+      <tracker shortcut="/simulations/T2/paddock/tracker" />
+    </area>
+  </simulation>
+  <simulation name="T5" shortcut="/simulations/T2">
+    <metfile name="met" shortcut="/simulations/T2/met" />
+    <clock shortcut="/simulations/T2/clock" />
+    <summaryfile shortcut="/simulations/T2/summaryfile" />
+    <area name="paddock" shortcut="/simulations/T2/paddock">
+      <Soil name="Bulgun_NEW" shortcut="/simulations/T2/paddock/Bulgun_NEW">
+        <Water shortcut="/simulations/T2/paddock/Bulgun_NEW/Water" />
+        <SoilWater shortcut="/simulations/T2/paddock/Bulgun_NEW/SoilWater" />
+        <SoilOrganicMatter shortcut="/simulations/T2/paddock/Bulgun_NEW/SoilOrganicMatter" />
+        <Analysis shortcut="/simulations/T2/paddock/Bulgun_NEW/Analysis" />
+        <InitialWater shortcut="/simulations/T2/paddock/Bulgun_NEW/InitialWater" />
+        <Sample name="Initial nitrogen" shortcut="/simulations/T2/paddock/Bulgun_NEW/Initial nitrogen" />
+      </Soil>
+      <erosion name="Erosion" shortcut="/simulations/T2/paddock/Erosion" />
+      <surfaceom name="SurfaceOrganicMatter" shortcut="/simulations/T2/paddock/SurfaceOrganicMatter" />
+      <fertiliser shortcut="/simulations/T2/paddock/fertiliser" />
+      <sugar shortcut="/simulations/T2/paddock/sugar" />
+      <folder name="Manager folder" shortcut="/simulations/T2/paddock/Manager folder">
+        <operations name="Operations Schedule">
+          <operation condition="start_of_day">
+            <date>21/6/2014</date>
+            <action>'SurfaceOrganicMatter' tillage f_incorp = 0.8 (0-1), tillage_depth = 200. (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>sugar sow plants = 10 (), cultivar = 'q117', sowing_depth = 150 (mm)</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>21/7/2014</date>
+            <action>fertiliser apply amount = 35.5 (kg/ha), depth = 150 (mm), type = 'nh4_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>22/10/2014</date>
+            <action>fertiliser apply amount = 31.5 (kg/ha), depth = 150 (mm), type = 'urea_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>11/11/2015</date>
+            <action>sugar harvest</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>25/11/2015</date>
+            <action>fertiliser apply amount = 0 (kg/ha), depth = 50 (mm), type = 'urea_n' ()</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>28/11/2016</date>
+            <action>sugar harvest !Assumed based on soil sampling date</action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+          <operation condition="start_of_day">
+            <date>
+            </date>
+            <action>
+            </action>
+          </operation>
+        </operations>
+        <manager name="wet based lodging" shortcut="/simulations/T2/paddock/Manager folder/wet based lodging" />
+        <manager name="Lodging" shortcut="/simulations/T2/paddock/Manager folder/Lodging" />
+        <manager name="NinRunoff" shortcut="/simulations/T2/paddock/Manager folder/NinRunoff" />
+      </folder>
+      <outputfile name="harvest" shortcut="/simulations/T2/paddock/harvest">
+        <filename output="yes">T5 harvest.out</filename>
+        <title>T5 harvest</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/harvest/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/harvest/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="daily" shortcut="/simulations/T2/paddock/daily">
+        <filename output="yes">T5 daily.out</filename>
+        <title>T5 daily</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/daily/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/daily/Reporting Frequency" />
+      </outputfile>
+      <outputfile name="layered" shortcut="/simulations/T2/paddock/layered">
+        <filename output="yes">T5 layered.out</filename>
+        <title>T5 layered</title>
+        <variables name="Variables" shortcut="/simulations/T2/paddock/layered/Variables" />
+        <events name="Reporting Frequency" shortcut="/simulations/T2/paddock/layered/Reporting Frequency" />
+      </outputfile>
+      <tracker shortcut="/simulations/T2/paddock/tracker" />
+    </area>
+  </simulation>
+</folder>

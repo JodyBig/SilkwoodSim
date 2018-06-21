@@ -1,0 +1,21 @@
+date,ratoon,crop_stage,Treatment,wet_stalk_t_ha,wet_leaf_t_ha,biomass_t_ha,stalk_N_export_kg_ha,leafN_kg_ha,total_leaf+stalkN_kg_ha,,,
+24/03/2015,0,stalk_elongation,1,66.8,26.4,93.1,65,56,121,,,Hi Bianca
+24/03/2015,0,stalk_elongation,2,52.6,25.9,78.5,52,61,113,,,"I have attached our results for 2014-16, also please have a read of the notes on biomass sampling and calculations,"
+24/03/2015,0,stalk_elongation,3,48.2,21.8,69.9,43,45,88,,,this will hopefully give you a better idea of the sampling scheme and calculations we have used. 
+24/03/2015,0,stalk_elongation,4,52.1,26.8,78.9,46,57,103,,,"I can say that our biomass estimates are likely to be an overestimate of actual biomass, difficult to say by how much but maybe ~5%. "
+24/03/2015,0,stalk_elongation,5,52.4,26.0,78.4,48,65,114,,,"If you have any questions please give me a bell or an email. Also, apologies for the multiple spreadsheets!"
+3/11/2015,0,harvest,1,84.6,15.8,100.4,80,31,111,,,Cheers
+3/11/2015,0,harvest,2,81.2,15.0,96.3,70,32,102,,,Jakob
+3/11/2015,0,harvest,3,88.8,17.8,106.6,60,32,93,,,
+3/11/2015,0,harvest,4,89.9,14.9,104.9,64,29,93,,,
+3/11/2015,0,harvest,5,95.7,20.4,116.1,64,40,104,,,
+29/06/2016,1,stalk_elongation,1,61.6,19.2,80.8,50,47,98,,,
+29/06/2016,1,stalk_elongation,2,48.4,16.7,65.1,31,33,64,,,
+29/06/2016,1,stalk_elongation,3,38.2,15.8,54.0,20,30,50,,,
+29/06/2016,1,stalk_elongation,4,45.9,17.7,63.6,25,33,58,,,
+29/06/2016,1,stalk_elongation,5,26.1,13.2,39.3,14,26,40,,,
+26/10/2016,1,harvest,1,41.4,9.5,50.9,32,17,49,,,
+26/10/2016,1,harvest,2,47.0,12.1,59.0,27,18,45,,,
+26/10/2016,1,harvest,3,53.3,14.5,67.8,25,20,45,,,
+26/10/2016,1,harvest,4,46.8,13.1,59.9,24,19,44,,,
+26/10/2016,1,harvest,5,31.7,14.8,46.5,14,23,38,,,
